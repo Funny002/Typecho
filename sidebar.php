@@ -40,10 +40,6 @@
 					</a>
 				</li>
 				<?php endwhile; ?>
-			</ul>
-		</div>
-		<div class="var-sidebar-rest">
-			<ul>
 				<li class="var-nav-li">
 					<a title="文章 RSS" target="_blank" href="<?php $this->options->feedUrl(); ?>">
 						<i class="mdui-icon material-icons">&#xe0e5;</i>

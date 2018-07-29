@@ -19,7 +19,6 @@
 	<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('style.css'); ?>"/>
 	<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
 	<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
-	<script src="<?php $this->options->themeUrl('style.js'); ?>" type="text/javascript" charset="utf-8"></script>
     <?php $this->header(); ?>
 </head>
 <body class="var-body-sidebar var-body-header">

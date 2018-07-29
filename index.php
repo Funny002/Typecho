@@ -45,7 +45,7 @@ $this -> need('header.php');
 				</div>
 				<div class="var-article-div-span">
 					<?php $this -> excerpt(80, '...'); ?>
-					<div style="position: absolute; right: 0; bottom: 0; width: 50px; height: 25px; line-height: 25px; margin-bottom: 10px;">
+					<div style="position: absolute; right: 0; bottom: 0; width: 60px; height: 25px; line-height: 25px; margin-bottom: 10px;">
 						<a href="<?php $this->permalink() ?>#comments">
 							<span><?php $this -> commentsNum('%d'); ?> : </span>
 							<i class="mdui-icon material-icons">&#xe3cd;</i>
@@ -58,7 +58,7 @@ $this -> need('header.php');
 <?php endwhile; ?>
 	<hr style="height: 0; border: 0; padding: 0; margin-bottom: 10px; border-top: 1px solid #ddd;" />
 	<div class="var-index-page">
-	    <?php $this -> pageNav('<', '>', 0, '...'); ?>
+	    <?php $this -> pageNav('上一页', '下一页',0,'...'); ?>
 	</div>
 </div>
 <?php $this -> need('footer.php'); ?>
