@@ -1,5 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<!DOCTYPE html>
+<!DOCTYPE html >
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -19,6 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('style.css'); ?>"/>
 	<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
 	<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+	<script src="<?php $this->options->themeUrl('style.js'); ?>"></script>
     <?php $this->header(); ?>
 </head>
 <body class="var-body-sidebar var-body-header">
@@ -28,7 +29,7 @@
 
 <header class="var-header" id="header">
 	<div class="mdui-toolbar mdui-container">
-		<a class="mdui-btn mdui-btn-icon var-max-600"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
+		<a class="mdui-btn mdui-btn-icon var-max-600 header-btn"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
 		<span class="mdui-typo-title" style="cursor: default;"><?php $this->options->title() ?></span>
 	<div class="mdui-toolbar-spacer"></div>
 		<div class="var-header-login">
