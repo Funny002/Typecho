@@ -3,7 +3,7 @@
 	<!--| logo |-->
 	<div class="var-logo">
 		<div class="var-logo-btn">
-			<a><i class="mdui-icon material-icons">&#xe163;</i></a>
+			<a class="logo-top var-min-600 logo-top-a" ><i class="mdui-icon material-icons">&#xe163;</i></a>
 		</div>
 		<div class="var-logo-img">
 			<?php if ($this->options->logoUrl): ?>
@@ -16,10 +16,10 @@
 	<!--| content / rest |-->
 	<div class="var-sidebar-content">
 		<div class="var-content-top var-span">
-			<span class="var-span" style="color: rgba(0,0,0,.4);"><?php $this->options->description(3) ?></span>
+			<span style="color: rgba(0,0,0,.4);"><?php $this->options->description(3) ?></span>
 		</div>
 		<div class="var-content-nav">
-			<ul>
+			<ul class="nav-ul-li">
 				<li class="var-nav-li">
 					<a href="" title="搜索">
 						<i class="mdui-icon material-icons">&#xe8b6;</i>
@@ -47,16 +47,16 @@
 					</a>
 				</li>
 				
-				<li class="var-nav-li">
+				<!--<li class="var-nav-li">
 					<a title="评论 RSS" target="_blank" href="<?php $this->options->commentsFeedUrl(); ?>">
 						<i class="mdui-icon material-icons">&#xe0e5;</i>
 						<span class="var-span">评论 RSS</span>
 					</a>
-				</li>
+				</li>-->
 				
 				<li class="var-nav-li">
 					<a title="Github" target="_blank" href="https://github.com/Funny002/Typecho">
-						<img style="width: 30px; height: 30px ;" src="<?php $this->options->themeUrl('img/github.png'); ?>" />
+						<i class="mdui-icon material-icons">&#xe86f;</i>
 						<span class="var-span">Github</span>
 					</a>
 				</li>
@@ -65,7 +65,7 @@
 		</div>
 		<!--| popup |-->
 		
-		<div class="var-sidebar-popup var-span" style="display: none;">
+		<!--<div class="var-sidebar-popup var-span" style="display: none;">
 			<div class="var-popup-top">
 				<a href="#popup_1" target="_self">最新文章</a>
 				<a href="#popup_2" target="_self">最近回复</a>
@@ -92,7 +92,8 @@
 				</div>
 				
 			</div>
-		</div>
+		</div>-->
 		
 	</div>
 </div><!-- end #sidebar -->
+<div class="logo-top-a var-nav" style="display: none;"></div>

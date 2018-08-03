@@ -29,7 +29,7 @@
 
 <header class="var-header" id="header">
 	<div class="mdui-toolbar mdui-container">
-		<a class="mdui-btn mdui-btn-icon var-max-600 header-btn"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
+		<a class="mdui-btn mdui-btn-icon var-max-600 logo-top-a"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
 		<span class="mdui-typo-title" style="cursor: default;"><?php $this->options->title() ?></span>
 	<div class="mdui-toolbar-spacer"></div>
 		<div class="var-header-login">
