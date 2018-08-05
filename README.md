@@ -2,6 +2,11 @@
 <span>ps:这只是一个鸽子的typecho仓库 <a href="http://bbs.funnyli.cn">在线演示</a></span>
 
 <div class="">
+  <h4>2018/8/5 P.M</h4>
+  <span>修复微量文章内容显示bug</span>
+</div>
+
+<div class="">
   <h4>2018/8/3 P.M</h4>
   <span>抽屉修复完成,剩少量BUG等待发现</span>
 </div>
@@ -20,3 +25,9 @@
   <h4>2018/7/27 P.M</h4>
   <span>大致上已经修改成功了</span>
 </div>
+<style type="text/css">
+.Title{
+}
+.Content{
+ }
+</style>
