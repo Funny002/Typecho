@@ -1,7 +1,7 @@
 # 鸽子的typecho主题
 <span>ps:这只是一个鸽子的typecho仓库 <a href="http://bbs.funnyli.cn">在线演示</a></span>
 
-<div class="">
+<div style="width:100% ;margin:10px 0;">
   <h4>2018/8/5 P.M</h4>
   <span>修复微量文章内容显示bug</span>
 </div>
@@ -25,9 +25,3 @@
   <h4>2018/7/27 P.M</h4>
   <span>大致上已经修改成功了</span>
 </div>
-<style type="text/css">
-.Title{
-}
-.Content{
- }
-</style>
