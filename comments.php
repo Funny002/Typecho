@@ -1,5 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__'))exit ; ?>
-<div class="var-comments mdui-clearfix">
+<div class="var-comments mdui-clearfix mdui-p-l-0 mdui-p-r-0">
     <?php $this->comments()->to($comments); if ($comments->have()): ?>	
 	<div class="var-comments-top">
 		<div class="var-top-left mdui-float-left">				
@@ -24,7 +24,7 @@
     
     <?php if($this->allow('comment')): ?>
     <div class="var-comments-index" id="<?php $this -> respondId(); ?>">
-    	<div class="var-comments-left mdui-float-left">
+    	<div class="var-comments-left">
     		<div class="var-comments-left-img">
     			<img class="comments-img" src="<?php $this -> options -> themeUrl('../../uploads/avatarCache/default.jpg'); ?>"/>
     			<?php if($this->user->hasLogin()): ?>
@@ -35,7 +35,7 @@
     			<?php $comments -> cancelReply(); ?>
     		</div>
     	</div>
-    	<div class="var-comments-right mdui-float-left">
+    	<div class="var-comments-right">
     		<form method="post" action="<?php $this->commentUrl() ?>">
     			<div class="var-post-top">
     				<ul style="padding: 0; margin: 0;">
@@ -92,13 +92,13 @@
 ?>
 
 <div class="comment" id="<?php $comments -> theId(); ?>">
-	<div class="comment-author mdui-float-left">
+	<div class="comment-author">
 		<ul>
 			<li><?php $comments -> gravatar('64', ''); ?></li>
 			<li><?php $comments -> reply('快速回复'); ?></li>
 		</ul>
 	</div>
-	<div class="mdui-float-left" style="width: calc(100% - 80px); height: 100px; padding-bottom: 5px;">
+	<div class="comment-author-div">
 		<div class="comment-name">
 			<ul>
 				<li class="mdui-typo"><?php $comments -> author(); ?></li>

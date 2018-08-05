@@ -1,11 +1,11 @@
 <?php
 /**
- * 这是 Typecho 0.9 系统的一套默认皮肤
+ * 这是集合了多个大佬做出来的主题
  *
- * @package Typecho Replica Theme
- * @author Typecho Team
- * @version 1.2
- * @link http://typecho.org
+ * @package 鸽子的主题
+ * @author Funny
+ * @version 0.1
+ * @link http://bbs.funnyli.cn
  */
 if (!defined('__TYPECHO_ROOT_DIR__'))
 	exit ;
