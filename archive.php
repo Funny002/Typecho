@@ -1,36 +1,53 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php $this->need('header.php'); ?>
-
-    <div class="col-mb-12 col-8" id="main" role="main">
-        <h3 class="archive-title"><?php $this->archiveTitle(array(
-            'category'  =>  _t('分类 %s 下的文章'),
-            'search'    =>  _t('包含关键字 %s 的文章'),
-            'tag'       =>  _t('标签 %s 下的文章'),
-            'author'    =>  _t('%s 发布的文章')
-        ), '', ''); ?></h3>
-        <?php if ($this->have()): ?>
-    	<?php while($this->next()): ?>
-            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    			<h2 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
-    			<ul class="post-meta">
-    				<li itemprop="author" itemscope itemtype="http://schema.org/Person"><?php _e('作者: '); ?><a itemprop="name" href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a></li>
-    				<li><?php _e('时间: '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></li>
-    				<li><?php _e('分类: '); ?><?php $this->category(','); ?></li>
-                    <li itemprop="interactionCount"><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('评论', '1 条评论', '%d 条评论'); ?></a></li>
-    			</ul>
-                <div class="post-content" itemprop="articleBody">
-        			<?php $this->content('- 阅读剩余部分 -'); ?>
-                </div>
-    		</article>
-    	<?php endwhile; ?>
-        <?php else: ?>
-            <article class="post">
-                <h2 class="post-title"><?php _e('没有找到内容'); ?></h2>
-            </article>
-        <?php endif; ?>
-
-        <?php $this->pageNav('<', '>',0,'...'); ?>
-    </div><!-- end #main -->
-
-
-<?php $this->need('footer.php'); ?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; $this->need('header.php'); if ($this->have()): ?>
+	<div class="var-archive mdui-typo">
+	<span class="mdui-typo-title"><?php $this->archiveTitle(array(
+		'category'	=> " ' <a href=''>%s</a> ' 下的文章",
+		'search'	=> " ' <a href=''>%s</a> ' 关键字的文章",
+		'tag'		=> " ' <a href=''>%s</a> ' 标签下的文章",
+		'author'	=> " ' <a href=''>%s</a> ' 发布的文章"
+	), '', ''); ?></span>
+	</div>
+	<?php while($this->next()): ?>
+	<div class="var-article"><!-- 框架 -->
+	    <a class="var-article-img" href="<?php $this->permalink() ?>">
+			<div class="var-article-img-img">
+				<?php if($this->options->slimg && 'guanbi' == $this->options->slimg): else: if($this->options->slimg && 'showoff'==$this->options->slimg): ?>
+					<a href="<?php $this->permalink() ?>" ><?php showThumbnail($this); ?></a>
+				<?php else: ?>
+					<img src="<?php showThumbnail($this); ?>">
+		       	<?php endif; endif; ?>
+			</div>
+		    <div class="var-article-img-div"><div><i class="mdui-icon material-icons">&#xe5cb;</i></div></div>
+		    <div class="var-article-nav"></div>
+	    </a>
+	    <div class="var-article-div mdui-typo">
+			<span><?php $this->title() ?></span>
+			<div class="var-article-div-ul">
+				<ul style="padding: 0; margin: 0;">
+					<li><span>作者:&ensp;<a href="<?php $this->author->permalink(); ?>"><?php $this -> author(); ?></a></span></li>
+					<li><span>时间:&ensp;<a><?php $this -> date('Y/m/d'); ?></a></span></li>
+					<li><span>分类:&ensp;<a><?php $this -> category(','); ?></a></span></li>
+				</ul>
+			</div>
+			<div class="var-article-div-span">
+				<?php $this -> excerpt(80, '...'); ?>
+				<div style="position: absolute; right: 0; bottom: 0; width: 60px; height: 25px; line-height: 25px; margin-bottom: 10px;">
+					<a href="<?php $this->permalink() ?>#comments">
+						<span><?php $this -> commentsNum('%d'); ?> : </span>
+						<i class="mdui-icon material-icons">&#xe3cd;</i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php endwhile; else: ?>
+    <div class="var-archive mdui-typo">
+       	<span class="mdui-typo-title"><?php $this->archiveTitle(array(
+		'category'	=> " ' <a href=''>%s</a> ' 下的文章",
+		'search'	=> " ' <a href=''>%s</a> ' 关键字的文章",
+		'tag'		=> " ' <a href=''>%s</a> ' 标签下的文章",
+		'author'	=> " ' <a href=''>%s</a> ' 发布的文章"
+    	), '', ''); ?></span>
+    	<span class="mdui-typo-title">没有找到该关键字的内容</span>
+    </div>
+<?php endif; $this->pageNav('<', '>',0,'...');  $this->need('footer.php'); ?>

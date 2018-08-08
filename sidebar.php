@@ -20,8 +20,8 @@
 		</div>
 		<div class="var-content-nav">
 			<ul class="nav-ul-li">
-				<li class="var-nav-li">
-					<a href="" title="搜索">
+				<li class="var-nav-li var-min-600">
+					<a title="搜索" style="cursor: pointer;" onclick="Search()">
 						<i class="mdui-icon material-icons">&#xe8b6;</i>
 						<span class="var-span">搜索</span>
 					</a>
@@ -47,12 +47,12 @@
 					</a>
 				</li>
 				
-				<!--<li class="var-nav-li">
+				<li class="var-nav-li">
 					<a title="评论 RSS" target="_blank" href="<?php $this->options->commentsFeedUrl(); ?>">
-						<i class="mdui-icon material-icons">&#xe0e5;</i>
+						<i class="mdui-icon material-icons">&#xe3f8;</i>
 						<span class="var-span">评论 RSS</span>
 					</a>
-				</li>-->
+				</li>
 				
 				<li class="var-nav-li">
 					<a title="Github" target="_blank" href="https://github.com/Funny002/Typecho">

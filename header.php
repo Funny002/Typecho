@@ -41,7 +41,22 @@
             	<a class="mdui-btn" title="登录" href="<?php $this->options->adminUrl('login.php'); ?>">登录</a>
             <?php endif; ?>
 		</div>
+		<a class="mdui-btn mdui-btn-icon var-max-600" onclick="Search()"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+	</div>
+	<div class="search">
+		<form action="<?php $this->options->siteUrl(); ?>" method="post">
+			<button type="submit"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
+			<input type="text" name="s" placeholder="输入关键字搜索"/>
+		</form>
+		<a onclick="Search()"><i class="mdui-icon material-icons">&#xe5cd;</i></a>
 	</div>
 </header><!-- end #var-header-->
 <?php $this->need('sidebar.php'); ?>
+<div class="search">
+	<form action="<?php $this->options->siteUrl(); ?>" method="post">
+		<button type="submit"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
+		<input type="text" name="s" placeholder="输入关键字搜索"/>
+	</form>
+	<a><i class="mdui-icon material-icons">&#xe5cd;</i></a>
+</div>
 <div class="var-index" id="index">
