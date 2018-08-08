@@ -2,11 +2,6 @@
 <span>ps:这只是一个鸽子的typecho仓库 <a href="http://bbs.funnyli.cn">在线演示</a></span>
 
 <div>
-  <h4>2018/8/8 P.M</h4>
-  <span>修复搜索框,以及搜索页面文章显示</span>
-</div>
-
-<div>
   <h4>2018/8/5 P.M</h4>
   <span>修复微量文章内容显示bug</span>
 </div>

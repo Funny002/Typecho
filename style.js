@@ -95,3 +95,11 @@ $(function() {
 		}, 10);
 	});
 });
+
+function Search(){
+	if($(".search").css("display") == "none"){
+		$(".search").css("display","block");
+	}else{
+		$(".search").css("display","none");		
+	}
+}
