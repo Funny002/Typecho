@@ -17,16 +17,18 @@
 	?></title>
 	<link rel="icon" type="image/x-icon" href="<?php $this->options->themeUrl('img/icon.png'); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('style.css'); ?>"/>
+	<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('mdui/css/mdui.css'); ?>" />
 	<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
 	<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
-	<script src="<?php $this->options->themeUrl('style.js'); ?>"></script>
+	<!--<script src="<?php $this->options->themeUrl('jquery-2.1.0.js'); ?>"></script>
+	<script src="<?php $this->options->themeUrl('style.js'); ?>"></script>-->
     <?php $this->header("commentReply="); ?>
 </head>
 <body class="sidebar-body">
 <!--[if lt IE 9]>
     <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 <![endif]-->
-<div class="var-background" style="background-image: url('<?php $this->options->themeUrl('img/bj.png'); ?>');"></div>
+<div class="var-background" style="background-image: url-('<?php $this->options->themeUrl('img/bj.png'); ?>');"></div>
 <header class="header">
 	<div class="var-nav">
 		<div class="mdui-toolbar mdui-container">
@@ -57,11 +59,17 @@
 </header><!-- end # header -->
 <?php $this->need('sidebar.php'); ?>
 	<div class="index">
-		
-<!--<script language=javascript>
-var aStr = "我的字符串1\n\n\n\n我的字符串2\n"
-alert(aStr)
-re=/(\n(?=(\n+)))+/g
-var str=aStr.replace(re,"")
-alert(str)
-</script>-->
+
+<!--
+********** 十种比较舒服的颜色*********
+#19caad;
+#8cc7b5;
+#a0eee1;
+#bee7e0;
+#beedc7;
+#d6d5b7;
+#d1ba74;
+#e6ceac;
+#ecad9e;
+#fa606c;
+-->
