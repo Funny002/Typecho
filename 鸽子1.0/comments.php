@@ -75,11 +75,8 @@ function threadedComments($comments, $options) {
 		<div class="comments-content-top">
 			<?php $comments -> gravatar('64', ''); ?>
 			<ul>
-				<li>&ensp;<span><i class="mdui-icon material-icons">&#xe7fd;</i><?php $comments -> author(); ?></span></li>
-				<li>&ensp;
-					<span><?php $comments -> date('Y / m / d H:i'); ?></span>
-					<?php $comments -> reply('— 回复'); ?>
-				</li>
+				<li><span><i class="mdui-icon material-icons">&#xe7fd;</i><?php $comments -> author(); ?></span></li>
+				<li><span><?php $comments -> date('Y / m / d H:i'); ?></span><?php $comments -> reply('— 回复'); ?></li>
 			</ul>
 		</div>
 		<div class="comments-content-span">

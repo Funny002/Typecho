@@ -2,7 +2,10 @@
 	margin: 0;
 	padding: 0;
 }
-
+div {
+table-layout: fixed;
+word-wrap: break-word;
+}
 a {
 	text-decoration: none;
 }

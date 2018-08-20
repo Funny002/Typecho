@@ -55,6 +55,20 @@
         <div class="page">			
 			<?php $this -> pageNav('上一页', '下一页', 0, '...'); ?>
 			<div></div>
+			<script>
+				$(function(){
+					if( $(".page-navigator").length == 0 ){
+						$(".page").css("display","none");
+					}
+					$(".page-text-btn").bind('keypress',function(event){ 
+						var href = "<?php $this->options->siteUrl();?>"+"index.php/page/"+$(".page-text-btn").val();
+						if(event.keyCode == 13){
+							window.location.replace(href.substring(5));
+						}  
+					});
+				});
+			</script>
 		</div>
+	
 </div>
 <?php $this->need('footer.php'); ?>

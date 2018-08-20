@@ -39,11 +39,12 @@ if (!defined('__TYPECHO_ROOT_DIR__'))exit; $this -> need('header.php'); ?>
 							<li>
 								<span><i class="mdui-icon material-icons">&#xe0b7;</i>&ensp;<a href="<?php $this->permalink() ?>#comments" ><?php $this -> commentsNum('暂无评论', '仅%d条评论', '有%d条评论'); ?></a></span>								
 							</li>
-							<li>
+							<li><span><i class="mdui-icon material-icons">&#xe1bd;</i>&ensp;<?php $this->category(','); ?></span></li>
+							<!--<li>
 							<?php if (!empty($this->options->sidebarBlock) && in_array('ShowArchive', $this->options->sidebarBlock)): ?>
 								<?php $this -> widget('Widget_Contents_Post_Date', 'type=month&format') -> parse('<span><i class="mdui-icon material-icons">&#xe260;</i>&ensp;<a href="{permalink}">{date}</a></span>'); ?>
 							<?php endif; ?>								
-							</li>
+							</li>-->
 						</ul>
 						<div class="arrticle-content-span"><?php $this -> excerpt(80, '...'); ?></div>
 					</div>
@@ -55,6 +56,9 @@ if (!defined('__TYPECHO_ROOT_DIR__'))exit; $this -> need('header.php'); ?>
 			<div></div>
 			<script>
 				$(function(){
+					if( $(".page-navigator").length == 0 ){
+						$(".page").css("display","none");
+					}
 					$(".page-text-btn").bind('keypress',function(event){ 
 						var href = "<?php $this->options->siteUrl();?>"+"index.php/page/"+$(".page-text-btn").val();
 						if(event.keyCode == 13){

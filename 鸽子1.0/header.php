@@ -17,11 +17,11 @@
 	?></title>
 	<link rel="icon" type="image/x-icon" href="<?php $this->options->themeUrl('img/icon.png'); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('style.css'); ?>"/>
-	<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('mdui/css/mdui.css'); ?>" />
 	<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
 	<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
-	<!--<script src="<?php $this->options->themeUrl('jquery-2.1.0.js'); ?>"></script>
-	<script src="<?php $this->options->themeUrl('style.js'); ?>"></script>-->
+	<!--<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('mdui/css/mdui.css'); ?>" />-->
+	<!--<script src="<?php $this->options->themeUrl('jquery-2.1.0.js'); ?>"></script>-->
+	<script src="<?php $this->options->themeUrl('style.js'); ?>"></script>
     <?php $this->header("commentReply="); ?>
 </head>
 <body class="sidebar-body">

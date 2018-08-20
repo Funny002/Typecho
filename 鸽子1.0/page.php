@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; $this->need('header.php'); ?>
 
-<div class="post">
+<div class="post" style="background: none;">
 	<div href="<?php $this->permalink() ?>" class="post-content" style="margin-bottom: 50px;">
 		<div class="post-content-top">
 			<span class="mdui-typo-title"><?php $this->title() ?></span>
