@@ -79,6 +79,7 @@ function threadedComments($comments, $options) {
 				<li><span><?php $comments -> date('Y / m / d H:i'); ?></span><?php $comments -> reply('— 回复'); ?></li>
 			</ul>
 		</div>
+		<script> comments('<?php $comments -> theId(); ?>','<?php qq_img($comments->mail); ?>'); </script>
 		<div class="comments-content-span">
 			<?php $comments -> content(); ?>
 		</div>
