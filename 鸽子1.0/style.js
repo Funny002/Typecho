@@ -95,7 +95,11 @@ $(function() {
 	});
 	
 });
-
+function comments(obj_1,obj_2){
+	if(obj_2 != ""){
+		$("#"+obj_1).find(".avatar").attr("src",obj_2);
+	}
+}
 
 
 
