@@ -119,20 +119,26 @@ function get_post_view($archive) {/* 使用  <?php get_post_view($this) ?>*/
 	}
 	echo $row['views'];
 }
-
-
-/* *-/
-function themeInit($archive) {
-	if ($_GET['action'] == 'ajax_avatar_get' && 'GET' == $_SERVER['REQUEST_METHOD']) {
-		$host = 'https://secure.gravatar.com/avatar/';
-		$email = strtolower($_GET['email']);
-		$hash = md5($email);
-		$sjtx = 'mm';
-		$avatar = $host . $hash . '?d=' . $sjtx;
-		echo $avatar;
-		die();
-	} else {
-		return;
-	}
+/*
+ * ========================================================
+ * ********** 获取qq头像	**********
+ * ========================================================
+ */
+function qq_img($obj_1){
+	if(strstr($obj_1,"@qq.com")):  // 判断是不是QQ邮箱
+		$qq = substr($obj_1,0,-7);
+		if(!preg_match("/[A-Za-z]/",$qq)): // 判断是否有英文
+			if(strlen($qq) >= 8 ):
+				$img = curl_init(); //创建接口连接
+				curl_setopt($img, CURLOPT_URL, "https://ptlogin2.qq.com/getface?appid=0&imgtype=3&uin=".$obj_1."&tdsourcetag=s_pctim_aiomsg"); //连接接口
+				curl_setopt($img, CURLOPT_HEADER, 0);
+				curl_setopt($img, CURLOPT_SSL_VERIFYPEER, false);
+				curl_setopt($img, CURLOPT_RETURNTRANSFER, 1);
+				$img_url = curl_exec($img);	//接收字符串
+				curl_close($img);
+				$img_url_a = substr($img_url,18+strlen($qq),-3);
+				echo "".$img_url_a."";
+			endif;
+		endif;
+	endif;
 }
-/**/
