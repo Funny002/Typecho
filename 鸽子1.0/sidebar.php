@@ -1,102 +1,109 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<div class="sidebar">
-	<div class="sidebar-logo">
-		<div class="sidebar-logo-btn">
-			<a class="sidebar-drawer-btn"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+
+<div class="var-sidebar">
+
+	<div class="var-sidebar-top">
+		<div class="var-sidebar-top-btn">
+			<a class="sidebar-btn"><i class="mdui-icon material-icons">arrow_back</i></a>
 		</div>
-		<div class="sidebar-logo-img">
+		<div class="var-sidebar-top-logo">
 			<?php if ($this->options->logoUrl): ?>
 				<img src="<?php $this->options->logoUrl() ?>"/>
             <?php else: ?>
             	<img src="<?php $this->options->themeUrl('img/logo.png'); ?>"/>
             <?php endif; ?>	
 		</div>
-	</div>
-	<div class="sidebar-content">
-		<?php if($this->user->hasLogin()): ?>
-			<span>ID : <a><?php $this->user->screenName(); ?></a></span>
-		<?php else: ?>
-			<span><?php $this->options->description() ?></span>
-		<?php endif; ?>
-			<ul>
+	</div><!-- end #sidebar -> top -->
+	
+	<div class="var-sidebar-content">
+		<span><?php $this->options->description() ?></span>
+		<ul>
+			
 			<?php if($this->user->hasLogin()): ?>
-				<li class="sidebar-content-li">
-					<a title="注销" href="<?php $this->options->logoutUrl(); ?>">
-						<i class="mdui-icon material-icons">&#xe001;</i>
-						<span class="">注销</span>
-					</a>
-				</li>
 				
-				<li class="sidebar-content-li">
-					<a title="进入后台" href="<?php $this->options->adminUrl(); ?>">
-						<i class="mdui-icon material-icons">&#xe40a;</i>
-						<span class="">进入后台</span>
-					</a>
-				</li>
-	        <?php else: ?>
-	        	
-        	<li class="sidebar-content-li">
+			<li class="var-sidebar-content-li">
+				<a title="进入后台" href="<?php $this->options->adminUrl(); ?>">						
+					<i class="mdui-icon material-icons">input</i>
+					<span>进入后台</span>
+				</a>
+			</li>
+			
+			<li class="var-sidebar-content-li">
+				<a title="注销" href="<?php $this->options->logoutUrl(); ?>">
+					<i class="mdui-icon material-icons">error_outline</i>
+					<span>注销</span>
+				</a>
+			</li>
+			
+			<?php else: ?>
+				
+			<li class="var-sidebar-content-li ">
 				<a title="Login" href="<?php $this->options->adminUrl('login.php'); ?>">
-					<i class="mdui-icon material-icons">&#xe8fb;</i>
-					<span class="">Login</span>
+					<i class="mdui-icon material-icons">account_circle</i>
+					<span>Login</span>
 				</a>
 			</li>
 			
 			<?php endif; ?>
-			
-			<li class="sidebar-content-li">
-				<a class="header-search-btn" title="搜索">
+
+			<li class="var-sidebar-content-li">
+				<a title="搜索" href="javascript:;" class="var-search-btn">
 					<i class="mdui-icon material-icons">&#xe8b6;</i>
-					<span class="">搜索</span>
+					<span>搜索</span>
 				</a>
 			</li>
 			
-			<li class="sidebar-content-li">
+			<li class="var-sidebar-content-li">
 				<a title="首页" href="<?php $this->options->siteUrl();?>">
-						<i class="mdui-icon material-icons">&#xe88a;</i>
-					<span class="">首页</span>
+					<i class="mdui-icon material-icons">home</i>
+					<span>首页</span>
 				</a>
 			</li>
 			
 			<?php $this->widget('Widget_Contents_Page_List')->to($pages); while($pages->next()): ?>
-			<li class="sidebar-content-li">
+			
+			<li class="var-sidebar-content-li">
 				<a title="<?php $pages->title(); ?>" href="<?php $pages->permalink(); ?>">
-					<i class="mdui-icon material-icons">&#xe53b;</i>
-					<span class=""><?php $pages->title(); ?></span>
-				</a>
-			</li>
-			<?php endwhile; ?>
-			<li class="sidebar-content-li">
-				<a title="文章 RSS" href="<?php $this->options->feedUrl(); ?>">
-					<i class="mdui-icon material-icons">&#xe0e5;</i>
-					<span class="">文章 RSS</span>
+					<i class="mdui-icon material-icons">linear_scale</i>
+					<span><?php $pages->title(); ?></span>
 				</a>
 			</li>
 			
-			<li class="sidebar-content-li">
-				<a title="Github" href="https://github.com/Funny002/Typecho">
-					<i class="mdui-icon material-icons">&#xe86f;</i>
-					<span class="">Github</span>
+			<?php endwhile; ?>
+
+			<li class="var-sidebar-content-li">
+				<a title="文章 RSS" href="<?php $this->options->feedUrl(); ?>">
+					<i class="mdui-icon material-icons">rss_feed</i>
+					<span>文章 RSS</span>
 				</a>
 			</li>
-
+			
+			<li class="var-sidebar-content-li">
+				<a title="Github" href="https://github.com/Funny002/Typecho">
+					<i class="mdui-icon material-icons">code</i>
+					<span>Github</span>
+				</a>
+			</li>
+			
 		</ul>
 	</div>
-</div><!-- end #sidebar-->
-<div class="var-cover_layer sidebar-drawer-btn"></div>
+</div><!-- end #content -->
+<div class="sidebar-nav sidebar-btn"></div>
+
 <div class="var-other-nav">
-	<a class="other-a-top"><i class="mdui-icon material-icons">&#xe5ce;</i></a>
-	<div>
-		<a class="other-a-btn"><i class="mdui-icon material-icons">&#xe8ee;</i></a>
-		<ul>
+	<a class="var-other-btn-1"><i class="mdui-icon material-icons">expand_less</i></a>
+	<div class="var-other-div">
+		<a class="var-other-btn"><i class="mdui-icon material-icons">view_headline</i></a>
+		<ul style="list-style: none;">
 			<li><span>文章</span></li>
 			<li><span>回复</span></li>
 			<li><span>分类</span></li>
-			<li><span class="other-span-bot" onclick="alert_Popup('该功能还没有完成',2);">归档</span></li>
+			<li><span class="before-none">归档</span></li>
 		</ul>
 	</div>
-	<a><i class="mdui-icon material-icons">&#xe5cf;</i></a>
-</div>
+	<a class="var-other-btn-2"><i class="mdui-icon material-icons">expand_more</i></a>
+</div><!-- end #sidebar -->
+
 <!--
 <div class="var-other-btn">
 	<a class="var-other-btn-top"><i class="mdui-icon material-icons">&#xe5ce;</i></a>
@@ -161,67 +168,3 @@
 		</div>
 	</div>
 </div><!-- end #other-->
-
-
-
-
-
-<!--
-<div class="col-mb-12 col-offset-1 col-3 kit-hidden-tb" id="secondary" role="complementary">
-    <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentPosts', $this->options->sidebarBlock)): ?>
-    <section class="widget">
-		<h3 class="widget-title"><?php _e('最新文章'); ?></h3>
-        <ul class="widget-list">
-            <?php $this->widget('Widget_Contents_Post_Recent')
-            ->parse('<li><a href="{permalink}">{title}</a></li>'); ?>
-        </ul>
-    </section>
-    <?php endif; ?>
-
-    <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentComments', $this->options->sidebarBlock)): ?>
-    <section class="widget">
-		<h3 class="widget-title"><?php _e('最近回复'); ?></h3>
-        <ul class="widget-list">
-        <?php $this->widget('Widget_Comments_Recent')->to($comments); ?>
-        <?php while($comments->next()): ?>
-            <li><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?></a>: <?php $comments->excerpt(35, '...'); ?></li>
-        <?php endwhile; ?>
-        </ul>
-    </section>
-    <?php endif; ?>
-
-    <?php if (!empty($this->options->sidebarBlock) && in_array('ShowCategory', $this->options->sidebarBlock)): ?>
-    <section class="widget">
-		<h3 class="widget-title"><?php _e('分类'); ?></h3>
-        <?php $this->widget('Widget_Metas_Category_List')->listCategories('wrapClass=widget-list'); ?>
-	</section>
-    <?php endif; ?>
-
-    <?php if (!empty($this->options->sidebarBlock) && in_array('ShowArchive', $this->options->sidebarBlock)): ?>
-    <section class="widget">
-		<h3 class="widget-title"><?php _e('归档'); ?></h3>
-        <ul class="widget-list">
-            <?php $this->widget('Widget_Contents_Post_Date', 'type=month&format=F Y')
-            ->parse('<li><a href="{permalink}">{date}</a></li>'); ?>
-        </ul>
-	</section>
-    <?php endif; ?>
-
-    <?php if (!empty($this->options->sidebarBlock) && in_array('ShowOther', $this->options->sidebarBlock)): ?>
-	<section class="widget">
-		<h3 class="widget-title"><?php _e('其它'); ?></h3>
-        <ul class="widget-list">
-            <?php if($this->user->hasLogin()): ?>
-				<li class="last"><a href="<?php $this->options->adminUrl(); ?>"><?php _e('进入后台'); ?> (<?php $this->user->screenName(); ?>)</a></li>
-                <li><a href="<?php $this->options->logoutUrl(); ?>"><?php _e('退出'); ?></a></li>
-            <?php else: ?>
-                <li class="last"><a href="<?php $this->options->adminUrl('login.php'); ?>"><?php _e('登录'); ?></a></li>
-            <?php endif; ?>
-            <li><a href="<?php $this->options->feedUrl(); ?>"><?php _e('文章 RSS'); ?></a></li>
-            <li><a href="<?php $this->options->commentsFeedUrl(); ?>"><?php _e('评论 RSS'); ?></a></li>
-            <li><a href="http://www.typecho.org">Typecho</a></li>
-        </ul>
-	</section>
-    <?php endif; ?>
-
-</div>-->

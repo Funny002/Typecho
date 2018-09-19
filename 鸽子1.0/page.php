@@ -1,26 +1,24 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; $this->need('header.php'); ?>
-
-<div class="post" style="background: none;">
-	<div href="<?php $this->permalink() ?>" class="post-content" style="margin-bottom: 50px;">
-		<div class="post-content-top">
-			<span class="mdui-typo-title"><?php $this->title() ?></span>
+<div class="var-post-page">
+	<div class="post-page-top" href="<?php $this->permalink() ?>">
+		<div class="post-page-title">
+			<h3><?php $this->title() ?></h3>
 			<ul>
-				<li><span><i class="mdui-icon material-icons">&#xe7fd;</i>&ensp;<a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a></span></li>
-				<li><span><i class="mdui-icon material-icons">&#xe878;</i>&ensp;<?php $this -> date('Y/m/d'); ?></span></li>
-				<?php if (!empty($this->options->sidebarBlock) && in_array('ShowArchive', $this->options->sidebarBlock)): ?>
-					<?php $this -> widget('Widget_Contents_Post_Date', 'type=month&format') -> parse('<li><span><i class="mdui-icon material-icons">&#xe260;</i>&ensp;<a href="{permalink}">{date}</a></span></li>'); ?>
-				<?php endif; ?>
-				<li><span><i class="mdui-icon material-icons">&#xe417;</i>&ensp;<?php get_post_view($this) ?></span></li>
-				<li><span><i class="mdui-icon material-icons">&#xe54e;</i>&ensp;<?php $this->tags(',',true, 'none'); ?></span></li>
+				<li><i class="mdui-icon material-icons">&#xe7fd;</i><a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a></li>
+				<li><i class="mdui-icon material-icons">&#xe878;</i><a><?php $this -> date('Y/m/d'); ?></a></li>
+				<!--<li><i class="mdui-icon material-icons">&#xe1bd;</i><a><?php $this->category(','); ?></a></li>-->
+				<li><i class="mdui-icon material-icons">&#xe417;</i><a><?php get_post_view($this) ?></a></li>
+				<li><i class="mdui-icon material-icons">&#xe54e;</i><a><?php $this->tags(',',true, 'none'); ?></a></li>
 			</ul>
 		</div>
-		<div class="post-content-span">
+		
+		<div class="post-page-content">
 			<?php $this->content(); ?>
 		</div>
 	</div>
-
+	
 	<?php $this->need('comments.php'); ?>
-
+		
 </div>
 
 <?php $this->need('footer.php'); ?>
