@@ -1,75 +1,67 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<!DOCTYPE html >
-<html class="html" lang="en">
+<!DOCTYPE html>
+<html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title><?php 
-    	$this->options->title();
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
+    <title><?php
 		$this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
             'search'    =>  _t('包含关键字 %s 的文章'),
             'tag'       =>  _t('标签 %s 下的文章'),
             'author'    =>  _t('%s 发布的文章')
-        ), '- ');
+        ),'',' - ');
+        $this->options->title();
 	?></title>
 	<link rel="icon" type="image/x-icon" href="<?php $this->options->themeUrl('img/icon.png'); ?>" />
-	<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('style.css'); ?>"/>
-	<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
-	<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
-	<!--<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('mdui/css/mdui.css'); ?>" />-->
-	<!--<script src="<?php $this->options->themeUrl('jquery-2.1.0.js'); ?>"></script>-->
-	<script src="<?php $this->options->themeUrl('style.js'); ?>"></script>
-    <?php $this->header("commentReply="); ?>
+	<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('css.js/mdui/css/mdui.min.css'); ?>"/> 
+	<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('css.js/style.css'); ?>"/>
+	<script src="<?php $this->options->themeUrl('css.js/jquery/jquery3.3.1.js'); ?>"></script>
+	<script src="<?php $this->options->themeUrl('css.js/style.js'); ?>"></script>
+    <?php $this->header("commentReply=&template=鸽子 Beta"); ?>
 </head>
-<body class="sidebar-body">
-<!--[if lt IE 9]>
-    <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
-<![endif]-->
-<div class="var-background" style="background-image: url-('<?php $this->options->themeUrl('img/bj.png'); ?>');"></div>
-<header class="header">
-	<div class="var-nav">
-		<div class="mdui-toolbar mdui-container">
-			<a class="mdui-btn mdui-btn-icon var-min-600-block sidebar-drawer-btn"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
-			<span class="mdui-typo-title" style="cursor: default;"><?php $this->options->title() ?></span>
-		<div class="mdui-toolbar-spacer"></div>
-				<?php if($this->user->hasLogin()): ?>
-					<a class="var-min-600-none"><?php $this->user->screenName(); ?></a>
-					<a class="var-min-600-none" href="<?php $this->options->adminUrl(); ?>">进入后台</a>
-					<a class="var-min-600-none" href="<?php $this->options->logoutUrl(); ?>">注销</a>
-			    <?php else: ?>
-			       	<a class="var-min-600-none" href="<?php $this->options->adminUrl('login.php'); ?>">Login<i class="mdui-icon material-icons">&#xe8fb;</i></a>
-				<?php endif; ?>
-			<a class="mdui-btn mdui-btn-icon var-min-600-block header-search-btn"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
-			<a class="mdui-btn mdui-btn-icon" href="javascript:alert_Popup('该功能还没有完成',1);"><i class="mdui-icon material-icons">&#xe3b7;</i></a>
-		</div>
-	</div>
-	<div class="var-search" style="margin-top: 0px;">
-		<form action="<?php $this->options->siteUrl(); ?>" method="post">
-			<button type="submit"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
-			<input type="text" name="s" placeholder="请输入关键字搜索"/>
-			<a class="header-search-btn"><i class="mdui-icon material-icons">&#xe5cd;</i></a>
-		</form>
-	</div>
-	<div class="var-music">
-		
-	</div>
-</header><!-- end # header -->
-<?php $this->need('sidebar.php'); ?>
-	<div class="index">
+<body class="var-body-sidebar">
 
-<!--
-********** 十种比较舒服的颜色*********
-#19caad;
-#8cc7b5;
-#a0eee1;
-#bee7e0;
-#beedc7;
-#d6d5b7;
-#d1ba74;
-#e6ceac;
-#ecad9e;
-#fa606c;
--->
+<header class="var-header">
+
+	<div class="var-toolbar mdui-toolbar">
+		<a class="mdui-btn mdui-btn-icon min-600-none sidebar-btn"><i class="mdui-icon material-icons">menu</i></a>
+		<a class="mdui-typo-title" href="<?php $this->options->siteUrl();?>"><?php $this->options->title() ?></a>
+		<div class="mdui-toolbar-spacer"></div>
+			<?php if($this->user->hasLogin()): ?>
+				<div class="var-toolbar-div">
+					<a title="<?php $this->user->screenName(); ?>"><?php echo $this->author->gravatar(35);?></a>
+					<div class="var-login-div">
+						<ul>
+							<div class="var-login-div-span">
+								<?php echo $this->author->gravatar(50);?>
+								<span>ID : <?php $this->user->screenName(); ?></span>							
+							</div>
+							<li><a href="<?php $this->options->adminUrl(); ?>">
+								<i class="mdui-icon material-icons">input</i>进入后台</a>
+							</li>
+							<li style="margin-top: -1px;"><a href="<?php $this->options->logoutUrl(); ?>">
+								<i class="mdui-icon material-icons">error_outline</i>注销</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+		   <?php else: ?>
+		       	<a title="登陆" href="<?php $this->options->adminUrl('login.php'); ?>"><i class="mdui-icon material-icons">account_circle</i></a>
+			<?php endif; ?>
+		<a class="mdui-btn mdui-btn-icon var-search-btn"><i class="mdui-icon material-icons">search</i></a>
+		<a class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">color_lens</i></a>
+	</div><!-- end # header -> toolbar -->
+
+	<div class="var-search">
+		<form action="<?php $this->options->siteUrl(); ?>" method="post">
+			<button type="submit"><i class="mdui-icon material-icons">search</i></button>
+			<input type="text" name="s" placeholder="请输入关键字搜索"/>
+			<a class="var-search-btn"><i class="mdui-icon material-icons">close</i></a>
+		</form>
+	</div><!-- end # header -> search -->
+	<div class="var-music"></div><!-- end # header -> music -->
+</header><!-- end # header -->
+<div class="var-index">
