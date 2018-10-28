@@ -1,8 +1,8 @@
 [MDUI]:https://www.mdui.org/
 [Typecho]:http://typecho.org/
 ## 鸽子的typecho主题
-> 使用说明,在下载以后请吧文件夹改名 原主题名称【default】,请备份好你以前的主题。
 > ps：这是一个 [Typecho] 的主题仓库<a href="bbs.funnyli.cn" >主题展示</a><br/>
+> 使用说明,在下载以后请吧文件夹改名原主题名称【default】,请备份好你以前的主题。<br />
 > 这是第一次下定决心这么正式的做一个 [Typecho] 的主题之前做了2个然后做着做着就鸽了没了下路.取名鸽子也是这个原因
 * * *
 #### 说明
