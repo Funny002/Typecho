@@ -11,7 +11,8 @@
 >> 博客中添加了 文章标题图片 和 标题随机图片 采用原生php并没有使用插件.<br/>
 * * *
 ### 2018/010/12 18:26
-> 前天装mac吧备份删了，现在处于一个非常尴尬的位置,本来今天就可以吧主题放出来的，非常抱歉请继续使用<a href="https://github.com/Funny002/Typecho/tree/0f6f68b438cd9b44def6c43f76ecbeba40a038fa">130 commits</a> 的记录吧。
+> 前天装mac吧备份删了，现在处于一个非常尴尬的位置，本来今天就可以吧主题放出来的
+> 非常抱歉请继续使用<a href="https://github.com/Funny002/Typecho/tree/0f6f68b438cd9b44def6c43f76ecbeba40a038fa">130 commits</a> 的记录吧。
 #### 2018/9/30 14:19
 > 马上国庆了,可怜的博主还没吧博客搞定,是我丢人了,而且很奇怪的发现一个问题,在学校pc浏览博客会有 10s 的红线 而手机却可以 2ms加载完博客
 > 非常奇怪的东西,由于现在的主题有问题，请使用 <a href="https://github.com/Funny002/Typecho/tree/0f6f68b438cd9b44def6c43f76ecbeba40a038fa">130 commits</a> 的记录,目前正在赶工中
