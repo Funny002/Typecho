@@ -120,7 +120,7 @@ function threadedComments($comments, $options) {
 		</ul>
 		<script type="text/javascript">
 			$(function(){
-				function _comments(obj_1,obj_2){if(obj_2 != ""){$("#"+obj_1).find(".comments-top>.avatar").attr("src",obj_2);}}
+				function _comments(obj_1,obj_2){if(obj_2 != ""){$("#"+obj_1">.comments-top>.avatar").attr("src",obj_2);}}
 				_comments('<?php $comments -> theId(); ?>','<?php qq_img($comments->mail); ?>');
 			});
 		</script>
