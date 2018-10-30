@@ -23,7 +23,7 @@
 				</a>
 			</li>
 			
-			<li class="var-sidebar-div-li">
+			<li class="var-sidebar-div-li" id="shoy">
 				<a href="<?php $this->options->siteUrl();?>" title="首页">
 					<i class="mdui-icon material-icons">&#xe88a;</i>
 					<span>首页</span>

@@ -25,7 +25,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; $this->need('header.php');?>
 				</div>
 				<div class="arrticle-top-nav"></div>
 			</div>
-			<div class="arrticle-content">
+			<div class="arrticle-content theme-typo">
 				<h3><?php $this->title() ?></h3>
 				<div class="arrticle-content-ul">
 					<ul>

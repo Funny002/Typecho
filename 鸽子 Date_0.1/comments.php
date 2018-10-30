@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
-<div class="var-comments">
+<div class="var-comments  theme-typo">
 
 	 <?php $this->comments()->to($comments); if ($comments->have()): ?>
 

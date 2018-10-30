@@ -1,5 +1,6 @@
 $(function() {
 	window.onresize = _body;
+
 	function _body() {
 		sidebar_btn();
 	}
@@ -13,41 +14,32 @@ $(function() {
 	 */
 	function sidebar_btn() {
 		let _width = $(window).width();
-		if(_width > 1024){
+		if(_width > 1024) {
 			// 罩层隐藏
-		}else{
-			if(_width < 600){
+		} else {
+			if(_width < 600) {
 				$("body.var-body-sidebar").removeClass("var-sidebar-mini");
 			}
-			if($("body.var-body-sidebar").hasClass("var-sidebar-normal")){
+			if($("body.var-body-sidebar").hasClass("var-sidebar-normal")) {
 				// 罩层显示
 			}
 		}
 	}
-	$(".sidebar-btn").click(function(){
+	$(".sidebar-btn").click(function() {
 		let _width = $(window).width();
-		if(_width > 1024){
-			if($("body.var-body-sidebar").hasClass("var-sidebar-normal")){
+		if(_width > 1024) {
+			if($("body.var-body-sidebar").hasClass("var-sidebar-normal")) {
 				$("body.var-body-sidebar").removeClass("var-sidebar-normal");
 			}
 			$("body.var-body-sidebar").toggleClass("var-sidebar-mini");
-		}else{
-			if($("body.var-body-sidebar").hasClass("var-sidebar-mini")){
+		} else {
+			if($("body.var-body-sidebar").hasClass("var-sidebar-mini")) {
 				$("body.var-body-sidebar").removeClass("var-sidebar-mini");
 			}
 			$("body.var-body-sidebar").toggleClass("var-sidebar-normal");
 		}
 	});
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	/**
 	 * =================================================
 	 * ********* var-index ************
@@ -81,5 +73,25 @@ $(function() {
 		$(".var-index").animate({
 			scrollTop: $(".var-index")[0].scrollHeight - $(".var-index").height()
 		}, 500);
+	});
+
+	/**
+	 * =================================================
+	 * ********* pjax ************
+	 * =================================================
+	 */
+	$("a").click(function() {
+		event.preventDefault();
+		var _href = $(this).attr("href"); //获取地址
+		$.pjax({
+			url: _href,
+			fragment: '#var-index',
+			container: "#var-index",
+			timeout: 8000
+		}).on('pjax:send', function() {
+			
+		}).on("pjax:complete", function() {
+			
+		});
 	});
 });

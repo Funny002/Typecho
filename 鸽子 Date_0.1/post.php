@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; $this->need('header.php'); ?>
 <div class="var-article">
-	<div class="var-page_post">
+	<div class="var-page_post  theme-typo">
 		<div class="var-page_post-top">
 			<span class="mdui-typo-title"><?php $this->title() ?></span>
 			<ul>

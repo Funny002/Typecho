@@ -13,13 +13,14 @@
             'author'    =>  _t('%s 发布的文章')
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
 	<link rel="icon" type="image/x-icon" href="<?php $this->options->themeUrl('img/icon.png'); ?>" />
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('css.js/mdui/css/mdui.min.css'); ?>">
+    	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    	<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.js"></script>
+    <link href="https://cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css.js/style.css'); ?>">
-    	<script src="<?php $this->options->themeUrl('css.js/jquery.min.js'); ?>"></script>
     	<script src="<?php $this->options->themeUrl('css.js/style.js'); ?>"></script>
     <?php $this->header('commentReply=&template=鸽子 Beta&generator=&rss1=&rss2='); ?>
 </head>
-<body class="var-body-sidebar">
+<body class="body-theme var-body-sidebar">
 <!--[if lt IE 9]>
 	<div class="body-index" style="posi">当前网页样式部分或全部 <strong>不支持</strong> 你正在使用的浏览器，为了您的正常体验，请升级或更换你当前的浏览器。
 		<style type="text/css">
@@ -50,10 +51,15 @@
 	   			<i class="mdui-icon material-icons">&#xe853;</i>
 	   			<div>
 		   			<ul class="list-none">
-		   				<li><a><?php $this->user->screenName(); ?></a></li>
-		   				<li><a href="<?php $this->options->profileUrl(); ?>">个人资料</a></li>
-		   				<li><a href="<?php $this->options->adminUrl(); ?>">进入后台</a></li>
-		   				<li><a href="<?php $this->options->logoutUrl(); ?>">退出</a></li>
+		   				<li><i class="mdui-icon material-icons">&#xe7fd;</i>
+		   					<a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>
+		   				</li>
+		   				<li><i class="mdui-icon material-icons">&#xe068;</i>
+		   					<a href="<?php $this->options->adminUrl(); ?>">进入后台</a>
+		   				</li>
+		   				<li><i class="mdui-icon material-icons">&#xe000;</i>
+		   					<a href="<?php $this->options->logoutUrl(); ?>">退出</a>
+		   				</li>
 		   			</ul>
 	   			</div>
 	   		</div>
@@ -72,4 +78,4 @@
 	</div>
 </header><!-- end #header -->
 <?php $this->need('sidebar.php'); ?>
-	<div class="var-index">
+	<div class="var-index" id="var-index">
