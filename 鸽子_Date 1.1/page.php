@@ -1,10 +1,10 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; $this->need('header.php'); ?>
 
 <div class="var-article">
-	<div class="var-page_post  theme-typo">
+	<div class="var-page_post">
 		<div class="var-page_post-top">
-			<span class="mdui-typo-title"><?php $this->title() ?></span>
-			<ul>
+			<span class="mdui-typo-title mdui-text-color-theme"><?php $this->title() ?></span>
+			<ul class="mdui-text-color-theme-accent">
 				<li>
 					<i class="mdui-icon material-icons">&#xe7fd;</i>
 					<a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a>

@@ -14,6 +14,7 @@
 	width: 42px;
 	height: 146px;
 	transform: translate(0, -100%);
+	z-index: 100;
 }
 
 .var-pagenav>span,

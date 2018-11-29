@@ -1,9 +1,9 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; $this->need('header.php'); ?>
 <div class="var-article">
-	<div class="var-page_post  theme-typo">
+	<div class="var-page_post">
 		<div class="var-page_post-top">
-			<span class="mdui-typo-title"><?php $this->title() ?></span>
-			<ul>
+			<span class="mdui-typo-title mdui-text-color-theme"><?php $this->title() ?></span>
+			<ul class="mdui-text-color-theme-accent">
 				<li>
 					<i class="mdui-icon material-icons">&#xe7fd;</i>
 					<a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a>
@@ -29,8 +29,8 @@
 		<div class="var-page_post-content"><?php $this->content(); ?></div>
 	</div><!-- end #page_post -->
 	<div class="var-page_post-nav">
-		<?php $this->thePrev('%s', NULL, array('title' => '<span>上一篇</span>', 'tagClass' => 'page_post-nav-1'));?>
-		<?php $this->theNext('%s',NULL, array('title' => '<span>下一篇</span>', 'tagClass' => 'page_post-nav-2')); ?>
+		<?php $this->thePrev('%s', NULL, array('title' => '<span>上一篇</span>', 'tagClass' => 'page_post-nav-1 mdui-text-color-theme-accent'));?>
+		<?php $this->theNext('%s',NULL, array('title' => '<span>下一篇</span>', 'tagClass' => 'page_post-nav-2 mdui-text-color-theme-accent')); ?>
 	</div>
 	<?php $this->need('comments.php'); ?>
 </div><!-- end #article -->

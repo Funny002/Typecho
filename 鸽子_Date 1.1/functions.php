@@ -25,7 +25,7 @@ function themeFields($layout) {
 
 function showThumbnail($widget) {
 	$dir = './usr/themes/default/img/random/';
-	$n = sizeof(scandir($dir)) - 2;
+	$n = sizeof(scandir($dir)) - 3;
 	if ($n <= 0) {
 		$n = 25;
 	}

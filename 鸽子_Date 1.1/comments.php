@@ -1,12 +1,14 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
-<div class="var-comments  theme-typo">
+<div class="var-comments">
 
 	 <?php $this->comments()->to($comments); if ($comments->have()): ?>
 
 	 <div class="var-comments-top">
-	 	<a href="#<?php $this->respondId(); ?>"><span class="var-comments-top-1"><?php $this->commentsNum(_t('暂无评论'), _t('仅有 %d 条评论'), _t('已有 %d 条评论')); ?></span>
-	 	<span class="var-comments-top-2">- 去评论</span></a>
+	 	<a class="mdui-text-color-theme" href="#<?php $this->respondId(); ?>">
+		 	<span class="var-comments-top-1"><?php $this->commentsNum(_t('暂无评论'), _t('仅有 %d 条评论'), _t('已有 %d 条评论')); ?></span>
+		 	<span class="var-comments-top-2">- 去评论</span>
+	 	</a>
 	
 		<div class="var-article-pagenav"><?php $comments->pageNav(); ?>
 			<script type="text/javascript">
@@ -46,24 +48,24 @@
     <?php endif; if($this->allow('comment')): ?>
 
     	<div class="var-comments-body" id="<?php $this->respondId(); ?>">
-    		<span>添加新评论</span>
+    		<span class="mdui-text-color-theme">添加新评论</span>
     		<form method="post" action="<?php $this->commentUrl() ?>">
     			<div class="var-comments-form-top">
     				<?php if($this->user->hasLogin()): ?>
     					<span class="var-comments-form-top-1">    						
-	    					<a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>
-	    					<a href="<?php $this->options->logoutUrl(); ?>" title="Logout">退出</a>
+	    					<a class="mdui-text-color-theme-accent" href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>
+	    					<a class="mdui-text-color-theme-accent" href="<?php $this->options->logoutUrl(); ?>" title="Logout">退出</a>
     					</span>
     				<?php else: ?>
-    					<a href="<?php $this->options->adminUrl('login.php'); ?>" title="Login">去登录？</a>
+    					<a class="mdui-text-color-theme-accent" href="<?php $this->options->adminUrl('login.php'); ?>" title="Login">去登录？</a>
     				<?php endif; ?>
-    				<span class="var-comments-form-top-2">您正在回复' <span></span> '<?php $comments->cancelReply(); ?></span>
+    				<span class="var-comments-form-top-2 mdui-text-color-theme-accent">您正在回复' <span></span> '<?php $comments->cancelReply(); ?></span>
     			</div>
     			 <?php if($this->user->hasLogin()): ?>
     			 	<div class="var-comments-admin">
     			 <?php else: ?>
     			 	<div class="var-comments-input">
-    			 		<ul class="list-none">
+    			 		<ul class="list-none" style="padding: 0; margin: 0;">
 						<li><input type="text" name="author" placeholder="昵称  (必须)" value="<?php $this->remember('author'); ?>" required /></li>
 						<li><input type="email" name="mail" placeholder="邮箱  (必须)" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> /></li>
 						<li><input type="url" name="url" placeholder="http:// (可选)" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> /></li>
@@ -72,7 +74,7 @@
     			 		<div class="var-comments-remember">
 						 <textarea name="text" required ><?php $this->remember('text'); ?></textarea>
 					</div>
-					<input type="submit" value="提交评论" />
+					<input class="mdui-text-color-theme-accent" type="submit" value="提交评论" />
     			 	</div>
     		</form>
     	</div>
@@ -115,8 +117,8 @@ function threadedComments($comments, $options) {
 	<div class="comments-top">
 		<?php $comments->gravatar('55',''); ?>
 		<ul>
-			<li><?php $comments->author(); ?></li>
-			<li><span><a><?php $comments->date('Y-m-d H:i'); ?></a><?php $comments->reply(' - 回复'); ?></span></li>
+			<li class="mdui-text-color-theme-accent"><?php $comments->author(); ?></li>
+			<li class="mdui-text-color-theme-accent"><span><a><?php $comments->date('Y-m-d H:i'); ?></a><?php $comments->reply(' - 回复'); ?></span></li>
 		</ul>
 		<script type="text/javascript">
 			$(function(){

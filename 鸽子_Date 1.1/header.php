@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css.js/style_header.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css.js/style_footer.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css.js/style_sidebar.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('css.js/style_page-post.css'); ?>">
 	<link rel="icon" type="image/x-icon" href="<?php $this->options->themeUrl('img/icon.png'); ?>" />   
 	<?php $this->header('commentReply=&template=鸽子 Beta&generator=&rss1=&rss2='); ?>
 </head>

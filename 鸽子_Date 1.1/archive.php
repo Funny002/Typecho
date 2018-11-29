@@ -36,27 +36,29 @@
 					<?php endif; endif; ?>
 				</a>
 				<div class="arrticle-top-btn">
-					<a href="<?php $this->permalink() ?>"><i class="mdui-icon material-icons">&#xe5cb;</i></a>
+					<a class="mdui-text-color-theme-accent" href="<?php $this->permalink() ?>"><i class="mdui-icon material-icons">&#xe5cb;</i></a>
 				</div>
 				<div class="arrticle-top-nav"></div>
 			</div>
 			<div class="arrticle-content">
-				<h3><?php $this->title() ?></h3>
+				<h3 class="mdui-text-color-theme"><?php $this->title() ?></h3>
 				<div class="arrticle-content-ul">
 					<ul>
-						<li>
+						<li class="mdui-text-color-theme-accent">
 							<span><i class="mdui-icon material-icons">&#xe7fd;</i>
 							<a href="<?php $this -> author -> permalink(); ?>"><?php $this -> author(); ?></a></span>
 						</li>
-						<li>
+						<li class="mdui-text-color-theme-accent">
 							<span><i class="mdui-icon material-icons">&#xe878;</i>
 							<a><?php $this -> date('Y/m/d'); ?></a></span>
 						</li>
-						<li>
+						<li class="mdui-text-color-theme-accent">
 							<span><i class="mdui-icon material-icons">&#xe0b7;</i>
-							<a href="<?php $this->permalink() ?>#comments" ><?php $this -> commentsNum('暂无评论', '仅 1 条评论', '有 %d 条评论'); ?></a></span>
+							<a href="<?php $this->permalink() ?>#comments" ><?php $this -> commentsNum('暂无评论', '1 条评论', '%d 条评论'); ?></a></span>
 						</li>
-						<li><span><i class="mdui-icon material-icons">&#xe1bd;</i><?php $this->category(','); ?></span></li>
+						<li class="mdui-text-color-theme-accent">
+							<span><i class="mdui-icon material-icons">&#xe1bd;</i><?php $this->category(','); ?></span>
+						</li>
 					</ul>
 					<div class="arrticle-content-excertp"><?php $this -> excerpt(80, '...'); ?></div>
 				</div>
