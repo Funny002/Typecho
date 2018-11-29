@@ -83,6 +83,7 @@ header.var-header {
 
 .var-header-admin ul>li>a {
 	width: calc(100% - 34px);
+	padding: 0px;
 	padding-left: 4px;
 	float: left;
 	color: #08f;
