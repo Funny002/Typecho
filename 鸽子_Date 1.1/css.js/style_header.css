@@ -71,6 +71,7 @@ header.var-header {
 }
 
 .var-header-admin>div>ul {
+	margin: 0px;
 	padding: 8px;
 	background: #fff;
 	width: calc(100% - 16px);
