@@ -1,0 +1,263 @@
+/** var-sidebar for sidebar.php
+ * =============================================================
+ * *************** header ***************
+ * =============================================================
+ */
+
+body.body-sidebar {
+    position: fixed;
+    top: 50px;
+    left: 240px;
+    transition: all .3s;
+    height: calc(100% - 50px);
+    width: calc(100% - 240px);
+}
+
+.var-sidebar {
+    position: fixed;
+    top: 80px;
+    left: 0px;
+    width: 240px;
+    transition: all .3s;
+    height: calc(100% - 80px);
+    box-shadow: 0 0 8px #d1d1d1;
+    border-top-right-radius: 8px;
+    background: rgba(255, 255, 255, 1);
+    >.var-sidebar-logo {
+        width: calc(100% - 32px);
+        height: calc(180px - 32px);
+        padding: 16px;
+        padding-bottom: 0px;
+        >.var-sidebar-logo-img {
+            width: 180px;
+            height: 180px;
+            overflow: hidden;
+            transition: all .3s;
+            border-radius: 16px;
+            margin: -32px auto 0px;
+            box-shadow: 0 0 8px #d1d1d1;
+            >img {
+                width: 100%;
+                height: auto;
+                background-size: cover;
+            }
+        }
+    }
+    >.var-sidebar-div {
+        width: calc(100% - 16px);
+        height: calc(100% - 180px);
+        padding: 8px;
+        >span {
+            display: block;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        >ul {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+            >li {
+                height: 30px;
+                width: 100%;
+            }
+        }
+        .var-sidebar-div-li {
+            >a {
+                display: block;
+                width: auto;
+                padding-left: 70px;
+                cursor: pointer;
+                height: 30px;
+                >* {
+                    float: left;
+                }
+                >i {
+                    padding: 3px;
+                }
+                >span {
+                    display: block;
+                    height: 30px;
+                    line-height: 30px;
+                }
+            }
+            >a:hover {
+                padding-left: 67px;
+                border-left: 3px solid #d1d1d1;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    body.body-sidebar {
+        left: 80px;
+        width: calc(100% - 80px);
+        .var-toolbar>.sidebar-btn {
+            transform: rotate(90deg);
+        }
+    }
+    .var-sidebar {
+        width: 80px;
+        >.var-sidebar-logo {
+            width: 60px;
+            height: calc(60px - 32px);
+            padding-left: 10px;
+            padding-right: 10px;
+            >.var-sidebar-logo-img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
+        }
+        .var-sidebar-div {
+            height: calc(100% - 60px);
+            >span {
+                display: none;
+            }
+            .var-sidebar-div-li {
+                padding: 4px 0px;
+                a {
+                    padding: 0px 17px;
+                    >span {
+                        display: none;
+                    }
+                }
+                a:hover {
+                    padding-left: 14px;
+                }
+            }
+        }
+    }
+    .var-footer{
+        left: 80px !important;
+        width: calc(100% - 80px) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    body.body-sidebar {
+        left: 0px;
+        width: 100%;
+        .var-toolbar>.sidebar-btn {
+            transform: rotate(90deg);
+        }
+    }
+    .var-sidebar {
+        width: 240px;
+        transform: translate(-100%);
+    }
+    .var-footer{
+        left: 0px !important;
+        width: 100% !important;
+    }
+}
+
+.var-sidebar-nav {
+    position: fixed;
+    display: none;
+    z-index: 30;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+}
+
+.var-sidebar-nav-block {
+    display: block;
+}
+
+
+/*----- end #sidebar--mini -----*/
+
+.sidebar-mini {
+    left: 80px !important;
+    width: calc(100% - 80px) !important;
+    .var-toolbar>.sidebar-btn {
+        transform: rotate(90deg);
+    }
+    .var-sidebar {
+        width: 80px;
+        >.var-sidebar-logo {
+            width: 60px;
+            height: calc(60px - 32px);
+            padding-left: 10px;
+            padding-right: 10px;
+            >.var-sidebar-logo-img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
+        }
+        >.var-sidebar-div {
+            height: calc(100% - 60px);
+            >span {
+                display: none;
+            }
+            .var-sidebar-div-li {
+                padding: 4px 0px;
+                a {
+                    padding: 0px 17px;
+                    >span {
+                        display: none;
+                    }
+                }
+                a:hover {
+                    padding-left: 14px;
+                }
+            }
+        }
+    }
+    .var-footer{
+        left: 80px !important;
+        width: calc(100% - 80px) !important;
+    }
+}
+
+
+/*----- end #sidebar--normal -----*/
+
+.sidebar-normal {
+    .var-toolbar>.sidebar-btn {
+        transform: rotate(0deg) !important;
+    }
+    .var-sidebar {
+        top: 0;
+        z-index: 31;
+        width: 240px;
+        height: 100%;
+        border-radius: 0px;
+        background: #ffffff;
+        transform: translate(0px);
+        >.var-sidebar-logo {
+            width: calc(100% - 32px);
+            height: calc(180px - 32px);
+            padding: 16px;
+            padding-bottom: 0px;
+            >.var-sidebar-logo-img {
+                width: 140px;
+                height: 140px;
+                margin: 0px auto;
+            }
+        }
+        >.var-sidebar-div {
+            height: calc(100% - 180px);
+            .var-sidebar-div-li {
+                padding: 2px 0px;
+                a {
+                    padding: 0px;
+                    padding-left: 30%;
+                    >span {
+                        display: block;
+                    }
+                }
+                a:hover {
+                    padding-left: calc(30% - 3px);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,183 @@
+/** var-index for index.php
+ * =============================================================
+ * *************** index ***************
+ * =============================================================
+ */
+
+.var-index {
+    >*{
+        margin: 0px auto;
+        margin-bottom: 16px;
+    }
+    overflow-y: auto;
+    transition: all .3s;
+    width: calc(100 - 32px);
+    height: calc(100% - 56px);
+    padding: 16px 16px 40px 16px;
+    >.var-article {
+        width: 100%;
+        height: 200px;
+        max-width: 1024px;
+        background: #ffffff;
+        box-shadow: 0 0 8px #d1d1d1;
+    }
+    >.var-index-pagenav{
+        width: 100%;
+        height: 30px;
+        margin-bottom: 16px;
+        >a{
+            display: block;
+            float: left;
+            width: 80px;
+            height: 30px;
+            margin: 0px 8px;
+            line-height: 30px;
+            text-align: center;
+            background: #ffffff;
+            text-decoration: none;
+            box-shadow: 0 0 3px #d1d1d1;
+        }
+        >div{
+            float: left;
+            height: 30px;
+            margin: 0px 8px;
+            padding: 0px 4px;
+            background: #ffffff;
+            box-shadow: 0 0 3px #d1d1d1;
+            >input{
+                padding: 0px;
+                margin: 0px;
+                float: left;
+                width: 30px;
+                height: 30px;
+                border: none;
+                outline: none;
+                background: none;
+                line-height: 30px;
+                text-align: center;
+            }
+            >span{
+                display: block;
+                float: left;
+                height: 30px;
+                padding: 0px 4px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+.var-article {
+    >* {
+        float: left;
+    }
+    >.var-artcle-top {
+        width: calc(100% - 450px);
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+        .var-artcle-top-img {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 200px;
+            transition: all .2s;
+            background-size: cover;
+            background-position: center;
+        }
+        >.var-artcle-top-nav {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            border-right: 60px solid #fff;
+            border-top: 200px solid transparent;
+        }
+        >.var-artcle-top-btn {
+            position: absolute;
+            z-index: 3;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0 0 5px #a1a1a1;
+            background: rgba(255, 255, 255, .8);
+            transform: translate(-50%, -50%) rotate(45deg);
+            &,a{
+                transition: all .2s;
+            }
+            >a {
+                display: block;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                transform: rotate(-45deg);
+            }
+        }
+        >.var-artcle-top-btn:hover{
+            background: rgba(0,0,0, .3);
+             box-shadow: 0 0 5px #e1e1e1;
+            transform: translate(-50%, -50%) rotate(90deg);
+            >a{
+                text-shadow: 0 0 0px #e1e1e1;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+    >.var-artcle-top:hover{
+        .var-artcle-top-img {
+            transform: scale(1.2);
+        }
+    }
+    >.var-artcle-content {
+        width: 450px;
+        height: 200px;
+        >h3 {
+            margin: 0px;
+            height: 40px;
+            padding: 0px 8px;
+            line-height: 40px;
+            width: calc(100% - 16px);
+        }
+        >.var-artcle-content-div {
+            width: 100%;
+            height: calc(100% - 40px);
+        }
+    }
+}
+
+.var-artcle-content-div {
+    >ul {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 30px;
+        list-style: none;
+        >li {
+            float: left;
+            height: 30px;
+            >span {
+                display: block;
+                height: 30px;
+                padding: 0px 4px;
+                >* {
+                    float: left;
+                }
+                >a {
+                    display: block;
+                    height: 30px;
+                    line-height: 30px;
+                    text-decoration: none;
+                }
+                >i {
+                    padding: 3px;
+                }
+            }
+        }
+    }
+    >.var-artcle-content-excertp {
+        padding: 0px 8px 8px;
+        width: calc(100% - 16px);
+        height: calc(100% - 38px);
+    }
+}

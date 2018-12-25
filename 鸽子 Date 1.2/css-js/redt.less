@@ -1,0 +1,191 @@
+/** var-page--nav for redt.php
+ * =============================================================
+ * *************** page--nav ***************
+ * =============================================================
+ */
+
+.var-page--nav {
+    position: fixed;
+    top: 97%;
+    right: 3%;
+    width: 42px;
+    z-index: 20;
+    height: 146px;
+    overflow: hidden;
+    transition: all .2s;
+    transform: translate(0, -100%);
+    >* {
+        margin: 5px 0px;
+    }
+    a {
+        cursor: pointer;
+        display: block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 4px;
+        text-align: center;
+        transition: all .2s;
+        background: #ffffff;
+        border: 1px solid #d1d1d1;
+    }
+    >a[class="pagenav-btn-1"] {
+        margin: -42px 0px 0px;
+    }
+}
+
+.pagenav-div {
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    transition: all .2s;
+    >a {
+        transform: rotate(0deg);
+    }
+    >ul {
+        width: 40px;
+        padding: 0px;
+        margin: 5px 0px;
+        list-style: none;
+        border-radius: 4px;
+        background: #ffffff;
+        border: 1px solid #d1d1d1;
+        >li {
+            width: 100%;
+            height: 30px;
+            >span {
+                position: relative;
+                cursor: pointer;
+                display: block;
+                width: 100%;
+                height: 30px;
+                font-size: 12px;
+                line-height: 30px;
+                text-align: center;
+            }
+            >span::before {
+                position: absolute;
+                content: "";
+                top: auto;
+                left: 50%;
+                bottom: 0;
+                width: 90%;
+                transform: translate(-50%);
+                border-bottom: 1px solid #d1d1d1;
+            }
+            >span[class="pagenav-span-4"]::before {
+                border: none;
+            }
+        }
+    }
+}
+
+.pagenav-block {
+    height: 273px;
+    >.pagenav-div {
+        height: 169px;
+        >a {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+
+/** var-themes for redt.php
+ * =============================================================
+ * *************** themes ***************
+ * =============================================================
+ */
+
+.var-themes {
+    position: fixed;
+    top: 0px;
+    left: 100%;
+    width: 90%;
+    height: 100%;
+    max-width: 500px;
+    transition: all .4s;
+    background: #ffffff;
+    box-shadow: 0 0 3px #d1d1d1;
+    z-index: 61;
+    >h3 {
+        margin: 0;
+        height: 30px;
+        padding: 10px;
+        line-height: 30px;
+        text-align: center;
+        width: calc(100% - 20px);
+        border-bottom: 1px solid #d1d1d1;
+    }
+    >.var-themes-form {
+        overflow-y: auto;
+        padding: 0px 10px;
+        width: calc(100% - 20px);
+        height: calc(100% - 102px);
+    }
+    >.var-themes-btn {
+        height: 30px;
+        padding: 5px 10px 15px;
+        width: calc(100% - 20px);
+        border-top: 1px solid #d1d1d1;
+        >a {
+            height: 30px;
+            line-height: 30px;
+            padding: 0px 10px;
+        }
+    }
+}
+
+.var-themes-form {
+    >form {
+        margin: 0;
+        padding: 0;
+        >* {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        >h3 {
+            height: 30px;
+            padding: 5px 0px;
+            line-height: 30px;
+        }
+        >ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: flex-start;
+            >li {
+                display: block;
+                width: calc(100% / 3 - 10px);
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+.var-themes-nav {
+    transition: all .4s;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+    z-index: 60;
+}
+
+body.body-themes {
+    >*{
+        transform: translate(-500px);
+    }
+    .var-themes{
+        transform: translate(-100%);
+    }
+    .var-themes-nav{
+        display: block;
+    }
+}

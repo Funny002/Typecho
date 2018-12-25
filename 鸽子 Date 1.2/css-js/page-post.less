@@ -1,0 +1,444 @@
+/** var-page--post for page.php and post.php
+ * =============================================================
+ * *************** page-post ***************
+ * =============================================================
+ */
+
+.var-page--post {
+    width: 100%;
+    max-width: 1240px;
+    background: #ffffff;
+    box-shadow: 0 0 3px #d1d1d1;
+    >.page--post-top {
+        width: 100%;
+        padding: 4px 0px 0px;
+    }
+    >.page--post-content {
+        width: calc(100% - 16px);
+        padding: 8px;
+    }
+}
+
+.page--post-top {
+    >h3 {
+        margin: 0;
+        width: calc(100% - 16px);
+        height: 40px;
+        font-size: 20px;
+        padding: 0px 8px;
+        line-height: 40px;
+    }
+    >ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 30px;
+        >li {
+            float: left;
+            height: 30px;
+            margin: 0px 4px;
+            >* {
+                float: left;
+            }
+            >i {
+                padding: 3px;
+            }
+            >a {
+                text-decoration: none;
+                padding: 0px 3px;
+                display: block;
+                height: 30px;
+                line-height: 30px;
+            }
+        }
+    }
+    @media (max-width: 600px){
+        >ul{
+            height: 60px;
+            >li:last-child{
+                width: 100%;
+            }
+        }
+    }
+    @media (max-width: 450px){
+        >ul{
+            height: 90px;
+            >li{
+                margin: 0px;
+                width: 50%;
+            }
+        }
+    }
+}
+
+.page--post-content {
+    h1 {
+        font-size: 2em;
+        margin: 8px 0px;
+    }
+    h2 {
+        font-size: 1.8em;
+        margin: 12px 0px;
+    }
+    h3 {
+        font-size: 1.4em;
+        margin: 15px 0px;
+    }
+    h4 {
+        font-size: 1em;
+        margin: 18px 0px;
+    }
+    h5 {
+        font-size: 0.9em;
+        margin: 20px 0px;
+    }
+    h6 {
+        font-size: 0.8em;
+        margin: 25px 0px;
+    }
+    p {
+        padding: 0;
+        margin: 8px 0px;
+        line-height: 20px;
+    }
+    img {
+        border: 0;
+        padding: 0;
+        height: auto;
+        max-width: 100%;
+        margin: 4px 0px;
+        background-size: cover;
+    }
+    a {
+        position: relative;
+        text-decoration: none;
+    }
+    a[href]::before {
+        position: absolute;
+        content: "";
+        top: auto;
+        left: 50%;
+        width: 0%;
+        bottom: -4px;
+        transition: width .3s;
+        transform: translate(-50%);
+        border-bottom: 1px solid #d1d1d1;
+    }
+    a[href]:hover::before {
+        width: 100%;
+    }
+    pre {
+        width: calc(100% - 10px);
+        padding: 4px;
+        margin: 8px 0px;
+        overflow-x: auto;
+        line-height: 25px;
+        border: 1px solid #d1d1d1;
+        code {}
+    }
+    ol,
+    ul {
+        li>ol,
+        li>ul {
+            margin: 0px;
+        }
+        margin: 8px 0px;
+        padding-left: 30px;
+        width: calc(100% - 30px);
+        line-height: 25px;
+    }
+    hr {
+        border: none;
+        padding: 0;
+        width: 100%;
+        height: 0px;
+        margin: 4px 0px;
+        background: none;
+        border-top: 1px solid #d1d1d1;
+    }
+    blockquote {
+        width: calc(100% - 30px);
+        margin: 8px 0px;
+        overflow-x: auto;
+        line-height: 25px;
+        margin-left: 10px;
+        padding-left: 16px;
+        border-left: 4px solid #d1d1d1;
+        p {
+            margin: 0px;
+            padding: 0px;
+            margin-top: 4px;
+            margin-bottom: 1px;
+        }
+        blockquote {
+            margin: 0px;
+            margin-left: 10px;
+        }
+    }
+}
+
+.var-page--post-nav {
+    width: 100%;
+    height: 30px;
+    padding: 5px 0px;
+    >a {
+        display: block;
+        float: left;
+        width: 80px;
+        height: 30px;
+        margin: 0px 8px;
+        line-height: 30px;
+        text-align: center;
+        background: #ffffff;
+        text-decoration: none;
+        box-shadow: 0 0 3px #d1d1d1;
+    }
+    @media (max-width: 600px){
+        >a:last-child{
+            float: right;
+        }
+    }
+}
+
+
+/** var-comments for comments.php
+ * =============================================================
+ * *************** page-post ***************
+ * =============================================================
+ */
+
+.var-comments {
+    padding: 8px;
+    width: calc(100 - 16px);
+    max-width: calc(1240px - 16px);
+    background: #ffffff;
+    box-shadow: 0 0 3px #d1d1d1;
+    >.var-comments-top {
+        width: 100%;
+        height: 30px;
+        >a {
+            float: left;
+            height: 30px;
+            display: block;
+            text-decoration: none;
+            span {
+                display: block;
+                float: left;
+                height: 30px;
+                font-size: 20px;
+                padding: 0px 4px;
+                line-height: 30px;
+            }
+            span:last-child {
+                opacity: 0;
+                transition: all 0.2s;
+                transform: translate(50%);
+            }
+        }
+        >a:hover {
+            span:last-child {
+                opacity: 1;
+                transform: translate(0%);
+            }
+        }
+    }
+    >.var-comments-ol {
+        width: 100%;
+        >ol {
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+            list-style: none;
+            .comments-body {
+                width: ;
+                height: ;
+                margin: 16px 0px;
+                border-radius: 4px;
+                border: 1px solid #d1d1d1;
+            }
+        }
+    }
+    >.var-comments-body {
+        width: 100%;
+        >span {
+            display: block;
+            width: 100%;
+            height: 25px;
+            line-height: 25px;
+        }
+        >form {
+            >.var-comments-form-top {
+                width: 100%;
+                height: 25px;
+                line-height: 25px;
+                >a {
+                    text-decoration: none;
+                }
+                >span {
+                    >span {
+                        cursor: default;
+                    }
+                    >a {
+                        margin: 0px 8px;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.comments-body {
+    width: ;
+    height: ;
+    margin: 16px 0px;
+    border-radius: 4px;
+    box-shadow: 0 0 3px #d1d1d1;
+    >.comments-top {
+        width: 100%;
+        height: 60px;
+        >* {
+            float: left;
+        }
+        >img {
+            margin: 5px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 0 4px #d1d1d1;
+        }
+        >ul {
+            width: calc(100% - 60px);
+            list-style: none;
+            height: 60px;
+            padding: 0px;
+            margin: 0px;
+            >li {
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    >.comments-content {
+        margin: 0px;
+        padding: 0px 8px;
+        width: calc(100% - 16px);
+        >p {
+            width: 100%;
+            margin: 4px 0px;
+            line-height: 25px;
+        }
+    }
+    >.comment-children {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        >ol {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            >.comments-body {
+                width: calc(100% - 26px);
+                margin: 8px;
+                padding-left: 5px;
+                border-left: 5px solid #d1d1d1;
+            }
+            >.comment-author {
+                border-left-color: #2196f3;
+            }
+        }
+    }
+}
+
+.var-comments-body {
+    .var-comments-admin {}
+    .var-comments-input {
+        width: 100%;
+        height: 146px;
+        display: table;
+        position: relative;
+        >ul {
+            float: left;
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            width: 240px;
+            >li {
+                width: calc(100% - 2px);
+                height: 30px;
+                margin: 4px 0px;
+                border-radius: 4px;
+                border: 1px solid #d1d1d1;
+                >i {
+                    float: left;
+                    padding: 3px;
+                    color: #515151;
+                    cursor: default;
+                }
+                >input {
+                    background: none;
+                    display: block;
+                    outline: none;
+                    border: none;
+                    float: left;
+                    margin: 0px;
+                    padding: 0px;
+                    height: 30px;
+                    padding-left: 4px;
+                    line-height: 30px;
+                    width: calc(100% - 35px);
+                    border-left: 1px solid #d1d1d1;
+                }
+            }
+        }
+        >.var-comments-remember {
+            float: left;
+            padding: 4px;
+            width: calc(100% - 248px);
+            height: calc(146px - 8px);
+            >textarea {
+                padding: 4px;
+                resize: none;
+                outline: none;
+                background: none;
+                line-height: 20px;
+                border-radius: 4px;
+                width: calc(100% - 10px);
+                height: calc(100% - 10px);
+                border: 1px solid #d1d1d1;
+            }
+        }
+        >input {
+            position: absolute;
+            background: none;
+            outline: none;
+            left: 0px;
+            top: 112px;
+            width: 240px;
+            height: 30px;
+            border-radius: 4px;
+        }
+        @media (max-width: 600px){
+            >ul{
+                width: 100%;
+                float: none;
+            }
+            >.var-comments-remember{
+                float: none;
+                width: 100%;
+                padding: 0px;
+            }
+            >input{
+                position: relative;
+                margin: 4px 0px;
+                width: 100%;
+                top: 0px;
+            }
+        }
+    }
+}
