@@ -1,12 +1,16 @@
-setTimeout("loding(0)",1000);
+if(document.readyState == "complete"){
+	$("#loding").remove();
+}else{	
+	setTimeout("loding(1)",500);
+}
 function loding(obj_1){
 	if(document.readyState == "complete") {
 		$("#loding").remove();
 	}else{
-		if(obj_1 > 3){
+		if(obj_1 > 6){
 			$("#loding").remove();
 		}else{
-			setTimeout("loding("+(obj_1+1)+")",1000);
+			setTimeout("loding("+(obj_1+1)+")",500);
 		}
 	}
 }
