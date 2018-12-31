@@ -179,13 +179,43 @@
 }
 
 body.body-themes {
-    >*{
+    >* {
         transform: translate(-500px);
     }
-    .var-themes{
+    .var-themes {
         transform: translate(-100%);
     }
-    .var-themes-nav{
+    .var-themes-nav {
         display: block;
+    }
+}
+
+@media (max-width: 800px) {
+    body.body-themes {
+        >* {
+            transform: translate(-350px);
+        }
+        .var-themes {
+            max-width: 350px;
+            transform: translate(-100%);
+            ul>li {
+                width: calc(50% - 10px);
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    body.body-themes {
+        >* {
+            transform: translate(-240px);
+        }
+        .var-themes {
+            max-width: 240px;
+            transform: translate(-100%);
+            ul>li {
+                width: calc(100% - 10px);
+            }
+        }
     }
 }

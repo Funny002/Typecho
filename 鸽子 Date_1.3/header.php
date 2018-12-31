@@ -24,8 +24,8 @@
 	<link rel="stylesheet/less" href="<?php $this->options->themeUrl('css-js/header.less'); ?>">
 	<link rel="stylesheet/less" href="<?php $this->options->themeUrl('css-js/footer.less'); ?>">
 	<link rel="stylesheet/less" href="<?php $this->options->themeUrl('css-js/sidebar.less'); ?>">
-	<link rel="stylesheet/less" href="<?php $this->options->themeUrl('css-js/page-post.less'); ?>">-->
-	<script src="https://cdn.bootcss.com/less.js/3.9.0/less.min.js"></script>
+	<link rel="stylesheet/less" href="<?php $this->options->themeUrl('css-js/page-post.less'); ?>">
+	<script src="https://cdn.bootcss.com/less.js/3.9.0/less.min.js"></script>-->
 	<?php $this->header('commentReply=&template=鸽子 Beta&generator=&rss1=&rss2='); ?>
 </head>
 <body class="body-sidebar mdui-theme-primary-blue mdui-theme-accent-red">
