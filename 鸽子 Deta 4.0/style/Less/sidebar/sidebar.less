@@ -1,0 +1,179 @@
+/*
+ * @Author: Funny
+ * @LastEditors: Do not edit
+ * @since: 2019-05-05 09:23:18
+ * @LastEditTime: 2019-05-05 18:23:29
+ */
+#sidebar {
+    box-sizing: border-box;
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    width: 96%;
+    max-width: 240px;
+    padding-top: 16px;
+    transition: all 0.3s;
+    height: calc(~"100% - 60px");
+    .sidebar-top {
+        position: absolute;
+        top: 16px;
+        left: 0px;
+        width: 100%;
+        height: 180px;
+        .siebar-logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            border-radius: 8px;
+            transition: all 0.25s;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        >span {
+            text-overflow: ellipsis;
+            box-sizing: border-box;
+            white-space: nowrap;
+            text-align: center;
+            overflow: hidden;
+            display: block;
+            height: 30px;
+            padding: 0px 8px;
+            line-height: 30px;
+        }
+    }
+    .sidebar-maet {
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 75px;
+        padding-top: 105px;
+        transition: all 0.25s;
+        background-color: #ffffff;
+        height: calc(~"100% - 75px");
+        border-radius: 0px 8px 0px 0px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+
+        a {
+            padding-left: 26px;
+            transition: all 0.25s;
+        }
+    }
+}
+
+#sidebar_mini() {
+    max-width: 70px;
+    .sidebar-top {
+        height: 180px;
+        .siebar-logo {
+            width: 54px;
+            height: 54px;
+            margin-left: 5px;
+            border-radius: 50%;
+        }
+        >span {
+            display: none;
+        }
+    }
+    .sidebar-maet {
+        margin-top: 27px;
+        padding-top: 27px;
+        height: calc(~"100% - 27px");
+        a {
+            padding: 0px calc(~"50% - 14px");
+            >div {
+                display: none;
+            }
+        }
+    }
+}
+
+body.var-sidebar- {
+    &body {
+        padding-left: 240px;
+    }
+    &small{
+        #sidebar{
+            #sidebar_mini();
+        }
+    }
+}
+
+@media(max-width: 1024px) {
+    #sidebar{
+        #sidebar_mini();
+    }
+    body.var-sidebar-big {
+        #sidebar {
+            max-width: 240px;
+            .sidebar-top {
+                height: 180px;
+                .siebar-logo {
+                    width: 150px;
+                    height: 150px;
+                    margin: 0 auto;
+                    border-radius: 8px;
+                }
+                >span {
+                    display: block;
+                }
+            }
+            .sidebar-maet {
+                margin-top: 75px;
+                padding-top: 105px;
+                height: calc(~"100% - 75px");
+                a {
+                    padding: 0px 16px 0px 26px;
+                    >div {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 600px) {
+    #sidebar{
+        transform: translate(-100%);
+    }
+    body.var-sidebar-big {
+        #sidebar {
+            top: 0px;
+            height: 100%;
+            padding: 0px;
+            max-width: 240px;
+            transform: translate(0%);
+            background-color: #ffffff;
+            .sidebar-top {
+                position: initial;
+                height: 180px;
+                padding-top: 20px;
+                .siebar-logo {
+                    width: 150px;
+                    height: 150px;
+                    margin: 0 auto;
+                    border-radius: 10px;
+                }
+                >span {
+                    display: block;
+                }
+            }
+            .sidebar-maet {
+                box-shadow: none;
+                margin-top: 0px;
+                padding-top: 0px;
+                height: calc(~"100% - 200px");
+                .mdui-list {
+                    padding: 0px;
+                }
+                a {
+                    padding: 0px 16px 0px 26px;
+                    >div {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

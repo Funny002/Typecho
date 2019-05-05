@@ -1,0 +1,136 @@
+body {
+    font-size: .96em;
+    background: #f1f1f1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/** var-header for header.php
+ * =============================================================
+ * *************** header ***************
+ * =============================================================
+ */
+
+.var-header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 20;
+    height: 50px;
+    transition: all .3s;
+    box-shadow: 0 0 8px #d1d1d1;
+    >* {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+    }
+}
+
+.var-toolbar {
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    max-width: 1280px;
+    transform: translate(-50%);
+    >.mdui-typo-title{
+        cursor: default;
+    }
+    >.mdui-btn:hover {
+        border-radius: 8px;
+        background: rgba(60, 60, 60, .3);
+    }
+    >.var-toolbar-admin>ul {
+        list-style: none;
+        position: fixed;
+        display: none;
+        top: 50px;
+        width: 130px;
+        padding: 4px 1px;
+        margin:4px 0px 0px;
+        background: #ffffff;
+        box-shadow: 0 0 3px #d1d1d1;
+        transform: translate(-50% + 24px);
+        >li{
+            position: relative;
+            width: 100px;
+            height: 30px;
+            padding-left: 30px;
+            >a{
+                display: block;
+                width: 100px;
+                height: 30px;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 30px;
+                text-align: center;
+                text-decoration: none;
+            }
+            >i{
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 3px;
+                transform: translate(0,0);
+            }
+        }
+    }
+    >.var-toolbar-admin:hover>ul {
+        display: block;
+    }
+}
+
+.var-search {
+    top: -50px;
+    left: 50%;
+    width: 90%;
+    z-index: 100;
+    transition: top .3s;
+    transform: translate(-50%);
+    >form {
+        width: 100%;
+        height: 30px;
+        margin: 10px auto;
+        max-width: 1024px;
+        background: #ffffff;
+        border-radius: 4px;
+        box-shadow: 0 0 2px #d1d1d1;
+    }
+    a,
+    button,
+    input {
+        background: none;
+        display: block;
+        outline: none;
+        border: none;
+        margin: 0;
+        padding: 0;
+        height: 30px;
+        float: right;
+        line-height: 30px;
+    }
+    a,
+    button {
+        cursor: pointer;
+        width: 30px;
+        text-align: center;
+        border-radius: 50%;
+        color: #000 !important;
+        transition: border-radius .2s;
+    }
+    a:hover,
+    button:hover {
+        border-radius: 4px;
+        color: #fff !important;
+        background: rgba(60, 60, 60, .3);
+    }
+    input {
+        width: calc(100% - 76px);
+        padding: 0px 8px;
+    }
+}
+.search-block{
+    top: 50px;
+}

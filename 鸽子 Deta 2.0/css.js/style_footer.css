@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/**
+ * ==========================================================
+ * ************ footer ************ 
+ * ========================================================== 
+ */
+
+.var-footer{
+	width: 100%;
+	height: 40px;
+	background: #fff;
+	line-height: 40px;
+	text-align: center;
+	border-top: 1px solid #d1d1d1;
+}
+body.mdui-theme-layout-dark .var-footer{
+	background-color: #a1a1a1;
+}
