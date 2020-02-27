@@ -1,0 +1,333 @@
+.var-sidebar {
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    position: fixed;
+    max-width: 240px;
+    padding-top: 150px;
+    transition: all .3s;
+    background-color: #fff;
+    box-shadow: 0 2px 3px #ddd;
+
+    &-logo {
+        top: 0;
+        left: 50%;
+        width: 100%;
+        height: 150px;
+        position: absolute;
+        transition: all .3s;
+        transform: translate(-50%, 0%);
+
+        > div {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 0 3px #bbb;
+
+            > img {
+                width: 100%;
+            }
+        }
+    }
+
+    &-container {
+        width: 100%;
+        height: 100%;
+
+        > span {
+            width: 100%;
+            height: 25px;
+            display: block;
+            line-height: 25px;
+            text-align: center;
+            color: rgba(0, 0, 0, .5);
+        }
+    }
+
+    &-menu {
+        width: 100%;
+        position: relative;
+        padding: 4px 4px 41px;
+
+        &-bar {
+            right: 0;
+            top: 4px;
+            width: 4px;
+            height: 35px;
+            margin-top: 0;
+            display: block;
+            position: absolute;
+            background-color: #40c4ff;
+            transition: margin-top .2s;
+        }
+
+        &-list {
+            width: 100%;
+            height: 35px;
+            display: block;
+            text-decoration: none;
+            color: rgba(0, 0, 0, .5);
+            padding: 2.5px 0 2.5px 30%;
+
+            &:hover {
+                border-style: solid;
+                border-color: #40c4ff;
+                border-width: 1px 0 1px 1px;
+                padding: 1.5px 4px 1.5px calc(30% - 1px);
+            }
+
+            > * {
+                display: block;
+                float: left;
+                height: 30px;
+                line-height: 30px;
+            }
+
+            > i {
+                width: 30px;
+            }
+
+            > span {
+                width: auto;
+            }
+        }
+    }
+
+    &-but {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 41px;
+        display: flex;
+        position: absolute;
+        justify-content: space-around;
+
+        > a {
+            width: 30px;
+            margin: 5px;
+            height: 30px;
+            padding: 0 3px;
+            line-height: 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            background-color: #ddd;
+            color: rgba(0, 0, 0, .5);
+            transition: color .3s, background-color .3s;
+
+            &:hover {
+                color: #fff;
+                background-color: #9be0ff;
+            }
+        }
+    }
+
+    &-nav {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        display: none;
+        position: fixed;
+        background-color: rgba(0, 0, 0, .3);
+    }
+}
+
+/**
+ * =====================================================================
+ * ==================  公共样式  ========================================
+ * =====================================================================
+ */
+.sidebar-block() {
+    top: 0;
+    height: 100%;
+    max-width: 240px;
+    border-radius: 0;
+    padding-top: 175px;
+    &-logo {
+        top: 25px;
+        transform: translate(-50%, 0%) !important;
+
+        > div {
+            width: 150px;
+            height: 150px;
+            border-radius: 16px !important;
+        }
+    }
+
+    &-container span {
+        display: block;
+    }
+
+    &-menu {
+        padding: 4px 4px 41px;
+
+        &-list {
+            height: 35px;
+            line-height: 35px;
+            padding: 2.5px 4px 2.5px 30%;
+
+            &:hover {
+                padding: 1.5px 4px 1.5px calc(30% - 1px);
+                border: 1px solid #40c4ff;
+                border-right: none;
+
+                > span {
+                    padding: 0;
+                    position: initial;
+                    color: rgba(0, 0, 0, .5);
+                    background-color: rgba(0, 0, 0, 0);
+                }
+            }
+
+            > i {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+.sidebar-mini() {
+    padding-left: 80px;
+    .var-sidebar {
+        max-width: 80px;
+        padding-top: 60px;
+
+        &-logo {
+            height: 60px;
+
+            > div {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        &-container span {
+            display: none;
+        }
+
+        &-menu {
+            padding: 8px 15px 41px;
+
+            &-list {
+                padding: 0;
+                height: 50px;
+                position: relative;
+
+                &:hover {
+                    border: none;
+
+                    > span {
+                        top: 5px;
+                        left: 100%;
+                        color: #fff;
+                        height: 30px;
+                        padding: 0 5px;
+                        display: block;
+                        line-height: 30px;
+                        position: absolute;
+                        border-radius: 4px;
+                        white-space: nowrap;
+                        background-color: #bbb;
+                    }
+                }
+
+                > i {
+                    width: 50px;
+                    height: 50px;
+                    line-height: 50px;
+                }
+            }
+        }
+    }
+
+    .sidebar-logo {
+        top: 105px;
+        padding-top: 30px;
+        border-radius: 0 8px 0 0;
+        height: calc(100% - 105px);
+
+        .var-sidebar {
+            &-logo {
+                transform: translate(-50%, -30px);
+
+                > div {
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+/** === === === 带body样式 === === === */
+body.body-sidebar {
+    padding-top: 55px;
+    padding-left: 240px;
+
+    .var-sidebar {
+        top: 55px;
+        height: calc(100% - 55px);
+    }
+
+    .sidebar-logo {
+        top: 155px;
+        padding-top: 90px;
+        border-radius: 0 16px 0 0;
+        height: calc(100% - 155px);
+
+        .var-sidebar {
+            &-logo {
+                transform: translate(-50%, -60px);
+            }
+        }
+    }
+}
+
+/** === === === 自适应样式 === === === */
+@media (max-width: 1024px) {
+    body.body-sidebar {
+        .sidebar-mini();
+    }
+}
+
+@media (max-width: 600px) {
+    body.body-sidebar {
+        padding-left: 0;
+
+        .var-sidebar {
+            .sidebar-block();
+            transform: translate(-100%);
+        }
+    }
+
+    body.body-sidebar .sidebar-logo {
+        .var-sidebar-logo {
+            transform: translate(-50%, 0);
+
+            > div {
+                border-radius: 16px;
+            }
+        }
+    }
+}
+
+body.sidebar-mini {
+    .sidebar-mini();
+}
+
+body.sidebar-block {
+    .var-sidebar {
+        z-index: 10000;
+        .sidebar-block();
+        transform: translate(0%);
+
+        &-nav {
+            display: block;
+        }
+    }
+}

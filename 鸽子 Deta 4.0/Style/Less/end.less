@@ -1,0 +1,58 @@
+body.before-blur {
+    &::before {
+        top: 0;
+        left: -3px;
+        content: "";
+        width: 100%;
+        z-index: -1;
+        height: 100%;
+        filter: blur(3px);
+        position: absolute;
+        transform: scale(1.02);
+        background-size: cover;
+        background-image: inherit;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+
+    .var {
+        &-sign-in,
+        &-sign-up {
+            background-color: rgba(255, 255, 255, .85);
+        }
+
+        &-header {
+            background-color: rgba(255, 255, 255, .85);
+
+            &-menu > .var-icon:hover {
+                background-color: #fff;
+            }
+        }
+
+        &-sidebar {
+            background-color: rgba(255, 255, 255, .85);
+
+            &-but > a {
+                box-shadow: 0 0 3px #bbb;
+
+                &:hover {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        &-site {
+            &-container {
+                background-color: rgba(255, 255, 255, .75);
+            }
+        }
+
+        &-search {
+            background-color: rgba(0, 0, 0, .1);
+
+            &-container {
+                background-color: rgba(255, 255, 255, .9);
+            }
+        }
+    }
+}

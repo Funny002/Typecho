@@ -1,36 +1,61 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php $this->need('header.php'); ?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+/** === === === 不知道作用 === === === */
+$this->need('/public/header.php'); ?>
+    <style>
+        .var-archive {
+            width: 90%;
+            max-width: 1024px;
+            border-radius: 8px;
+            margin: 8px 0 16px;
+            transition: width .3s;
+            background-color: #fff;
+            box-shadow: 0 0 3px #ddd;
+        }
 
-    <div class="col-mb-12 col-8" id="main" role="main">
-        <h3 class="archive-title"><?php $this->archiveTitle(array(
-            'category'  =>  _t('分类 %s 下的文章'),
-            'search'    =>  _t('包含关键字 %s 的文章'),
-            'tag'       =>  _t('标签 %s 下的文章'),
-            'author'    =>  _t('%s 发布的文章')
-        ), '', ''); ?></h3>
-        <?php if ($this->have()): ?>
-    	<?php while($this->next()): ?>
-            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    			<h2 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
-    			<ul class="post-meta">
-    				<li itemprop="author" itemscope itemtype="http://schema.org/Person"><?php _e('作者: '); ?><a itemprop="name" href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a></li>
-    				<li><?php _e('时间: '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></li>
-    				<li><?php _e('分类: '); ?><?php $this->category(','); ?></li>
-                    <li itemprop="interactionCount"><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('评论', '1 条评论', '%d 条评论'); ?></a></li>
-    			</ul>
-                <div class="post-content" itemprop="articleBody">
-        			<?php $this->content('- 阅读剩余部分 -'); ?>
-                </div>
-    		</article>
-    	<?php endwhile; ?>
-        <?php else: ?>
-            <article class="post">
-                <h2 class="post-title"><?php _e('没有找到内容'); ?></h2>
-            </article>
-        <?php endif; ?>
+        .var-archive > * {
+            width: 100%;
+            display: block;
+        }
 
-        <?php $this->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
-    </div><!-- end #main -->
+        .var-archive-title {
+            height: 40px;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 40px;
+            padding-left: 8px;
+        }
 
-	<?php $this->need('sidebar.php'); ?>
-	<?php $this->need('footer.php'); ?>
+        .var-archive-title > span {
+            padding: 0 4px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .var-archive-body {
+            height: 25px;
+            margin-left: 8px;
+            line-height: 25px;
+            padding-left: 8px;
+            margin-bottom: 8px;
+            width: calc(100% - 7px);
+            border-left: 4px solid #ddd;
+        }
+
+    </style>
+    <div class="var-index-container">
+        <div class="var-archive">
+            <span class="var-archive-title">
+            <?php $this->archiveTitle(array(
+                'tag' => _t('标签<span>%s</span>下的文章'),
+                'author' => _t('<span>%s</span>发布的文章'),
+                'category' => _t('分类<span>%s</span>下的文章'),
+                'search' => _t('包含关键字<span>%s</span>的文章')
+            ), '', ''); ?>
+            </span>
+            <?= $this->have() ? '' : '<span class="var-archive-body">没有找到内容</span>'; ?>
+        </div>
+        <?php $this->need('/public/article.php'); ?>
+    </div>
+
+<?php $this->need('/public/pagenav.php'); ?>
+<?php $this->need('/public/footer.php'); ?>
